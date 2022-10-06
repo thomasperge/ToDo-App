@@ -13,7 +13,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     -webkit-app-region: drag;
 }
 

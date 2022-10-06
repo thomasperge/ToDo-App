@@ -1,7 +1,17 @@
 /**
- * Send IPC call to windows.close() and will also call app.close() after all process end.
+ * texte here
  * @function
  */
-function close_app() {
-    ipcRenderer.send("close-btn", true)
+
+const MINUS = document.getElementById("minimize")
+const CLOSE_APP = document.getElementById("close-app")
+
+MINUS.addEventListener("click", minimize)
+CLOSE_APP.addEventListener("click", close_app)
+
+function close_app(){
+    app.window.close()
+}
+function minimize(){
+    app.window.minimize()
 }

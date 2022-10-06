@@ -37,9 +37,8 @@ nav {
 }
 
 .settings:hover {
-    background-color: #11df4c;
+    background-color: #e89c0e;
     color: white;
-    border-radius: 10px
 }
 
 .drag {

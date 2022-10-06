@@ -1,0 +1,22 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "ToDoList Electron App",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasperge/ToDoListApp.git"
+  },
+  "author": "Thomas Kauffmant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasperge/ToDoListApp/issues"
+  },
+  "homepage": "https://github.com/thomasperge/ToDoListApp#readme",
+  "devDependencies": {
+    "electron": "^21.1.0"
+  }
+}

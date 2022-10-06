@@ -31,9 +31,15 @@ nav {
     color: white
 }
 
-.minus:hover, .settings:hover {
+.minus:hover{
     background-color: #323238;
     color: white
+}
+
+.settings:hover {
+    background-color: #11df4c;
+    color: white;
+    border-radius: 10px
 }
 
 .drag {

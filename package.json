@@ -19,5 +19,8 @@
   "homepage": "https://github.com/thomasperge/ToDoListApp#readme",
   "devDependencies": {
     "electron": "^21.1.0"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^4.1.1"
   }
 }

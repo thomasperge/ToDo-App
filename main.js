@@ -22,7 +22,7 @@ async function main() {
     },
   })
 
-  window.webContents.openDevTools();
+  // window.webContents.openDevTools();
 
   window.on("ready-to-show", window.show)
   window.loadFile('index.html')

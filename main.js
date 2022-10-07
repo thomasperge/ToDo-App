@@ -3,6 +3,8 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 app.whenReady().then(main)
 
+app.disableHardwareAcceleration()
+
 let window
 
 async function main() {
@@ -20,11 +22,10 @@ async function main() {
     },
   })
 
-  // window.webContents.openDevTools();
+  window.webContents.openDevTools();
 
   window.on("ready-to-show", window.show)
   window.loadFile('index.html')
-
 }
 
 ipcMain.on("app/close", () => {

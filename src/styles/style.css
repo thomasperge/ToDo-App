@@ -18,11 +18,11 @@ nav {
   justify-content: space-between;
   background-color: #29292d;
   -webkit-app-region: drag;
-  z-index: 2;
+  z-index: 1;
 }
 
+/* ==== NAVIGATION ==== */
 .titlebar {
-  /* background-color: red; */
   width: 100%;
   height: 34px;
 }
@@ -57,11 +57,28 @@ nav {
   -webkit-app-region: no-drag;
 }
 
+/* === Content === */
 .container {
-  /* background-color: gray; */
-  margin: 0;
-  padding: 5px;
+  overflow: hidden;
   width: 100%;
+  background-color: gray;
+  margin: 0;
   height: 100vh;
   color: #e89c0e;
+  padding: 2%;
+}
+
+.profile {
+  float: left;
+  width: 23%;
+  height: 15%;
+  background-color: goldenrod;
+}
+
+.task {
+  margin-left: 25%;
+  left: 10%;
+  width: 71%;
+  height: 15%;
+  background-color: yellow;
 }

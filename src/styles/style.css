@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "SpotifyMedium";
+  src: url("../../font/GothamMedium.ttf");
+}
+
 body {
   background-color: #202022;
   margin: 0%;
@@ -81,10 +86,10 @@ nav {
   overflow: hidden;
   width: 100%;
   margin: 0;
-  height: 100vh;
+  height: 92vh;
   color: #e89c0e;
   padding: 2%;
-  padding-bottom: 3%;
+  padding-bottom: 5vh;
 }
 
 .profile {
@@ -107,7 +112,7 @@ nav {
 .credit{
   color: #606068;
   text-align: center;
-  font-family: monospace;
+  font-family: 'SpotifyMedium';
   align-items: center;
   height: 3%;
 }

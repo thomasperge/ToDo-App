@@ -6,6 +6,25 @@ body {
   -webkit-app-region: no-drag;
 }
 
+/* ======== ScrollBar ======== */
+::-webkit-scrollbar {
+  width: 0px;
+  border-radius: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background: #111112;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18181c;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1a1d;
+}
+
 /* Navigation */
 nav {
   overflow-y: hidden;

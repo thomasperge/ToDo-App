@@ -81,7 +81,7 @@ nav {
   -webkit-app-region: no-drag;
 }
 
-/* === Content === */
+/* === Content Task and Profile === */
 .container {
   overflow: hidden;
   width: 100%;
@@ -97,7 +97,8 @@ nav {
   width: 23%;
   height: 97%;
   background-color: #2c2c2f;
-  border-radius: 10px;
+  border-radius: 9px;
+  overflow: hidden;
 }
 
 .task {
@@ -106,9 +107,25 @@ nav {
   width: 71%;
   height: 97%;
   background-color: #2c2c2f;
-  border-radius: 10px;
+  border-radius: 9px;
+  overflow: hidden;
 }
 
+.titlePart {
+  background-color: gray;
+  font-size: auto;
+  opacity: 78%;
+  text-align: center;
+  width: 100%;
+  padding-top: 7px;
+  height: 25px;
+  max-height: 25px;
+  color: #606068;
+  font-family: 'SpotifyMedium';
+}
+
+
+/* ==== Credit - End Page ==== */
 .credit{
   color: #606068;
   text-align: center;

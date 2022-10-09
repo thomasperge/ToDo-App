@@ -84,35 +84,36 @@ nav {
 /* === Content Task and Profile === */
 .container {
   overflow: hidden;
-  width: 100%;
+  width: auto;
   margin: 0;
   height: 92vh;
-  color: #e89c0e;
   padding: 2%;
-  padding-bottom: 5vh;
+  padding-bottom: 6vh;
 }
 
 .profile {
   float: left;
-  width: 23%;
+  width: 24%;
   height: 97%;
+  margin-right: 2%;
   background-color: #2c2c2f;
   border-radius: 9px;
   overflow: hidden;
+  margin-bottom: 3vh;
 }
 
 .task {
-  margin-left: 25%;
-  left: 0;
-  width: 71%;
+  width: auto;
+  /* width: 74%; */
   height: 97%;
   background-color: #2c2c2f;
   border-radius: 9px;
   overflow: hidden;
+  margin-bottom: 3vh;
 }
 
 .titlePart {
-  background-color: gray;
+  /* background-color: gray; */
   font-size: auto;
   opacity: 78%;
   text-align: center;
@@ -124,6 +125,14 @@ nav {
   font-family: 'SpotifyMedium';
 }
 
+.content {
+  color: white;
+  padding: 15px;
+  padding-top: 7px;
+  width: auto;
+  height: 100%;
+  font-family: 'SpotifyMedium';
+}
 
 /* ==== Credit - End Page ==== */
 .credit{

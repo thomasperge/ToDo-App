@@ -21,6 +21,7 @@
     "electron": "^21.1.0"
   },
   "dependencies": {
-    "custom-electron-titlebar": "^4.1.1"
+    "custom-electron-titlebar": "^4.1.1",
+    "fs": "^0.0.1-security"
   }
 }

@@ -20,6 +20,10 @@ async function main() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    }
   })
 
   // window.webContents.openDevTools();

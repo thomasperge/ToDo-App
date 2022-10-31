@@ -18,11 +18,8 @@ async function main() {
     minWidth: 800,
     minHeight: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    },
-    webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,
+      preload: path.join(__dirname, "preload.js") // use a preload script
     }
   })
 

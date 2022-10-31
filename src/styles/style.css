@@ -107,18 +107,7 @@ nav {
   margin-bottom: 3vh;
 }
 
-.task {
-  width: auto;
-  /* width: 74%; */
-  height: 97%;
-  background-color: #2c2c2f;
-  border-radius: 9px;
-  overflow: hidden;
-  margin-bottom: 3vh;
-}
-
 .titlePart {
-  /* background-color: gray; */
   font-size: auto;
   opacity: 78%;
   text-align: center;
@@ -128,6 +117,17 @@ nav {
   max-height: 25px;
   color: #606068;
   font-family: 'SpotifyMedium';
+}
+
+.task {
+  text-align: center;
+  justify-content: center;
+  width: auto;
+  height: 97%;
+  background-color: #2c2c2f;
+  border-radius: 9px;
+  overflow: hidden;
+  margin-bottom: 3vh;
 }
 
 .content-profile {
@@ -141,14 +141,42 @@ nav {
 }
 
 .content-task {
-  /* background-color: red; */
-  overflow: hidden;
+  overflow: scroll;
+  display: flex;
+  width: auto;
+  height: 100%;
   color: white;
   padding: 15px;
   padding-top: 7px;
-  width: auto;
-  height: 83%;
   font-family: 'SpotifyMedium';
+  text-align: center;
+  justify-content: center;
+}
+
+.task-middle {
+  /* background-color: red; */
+  padding: 10px;
+  width: auto;
+  height: auto;
+  overflow: scroll;
+  display: inline-block;
+  color: white;
+  font-family: 'SpotifyMedium';
+  text-align: center;
+  justify-content: center;
+}
+
+/* == Task == */
+.task1 {
+  display: flex;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  border-radius: 9px;
+  padding: 5%;
+  margin-bottom: 11px;
+  text-align: left;
+  background-color: #202022;
 }
 
 /* ==== Credit - End Page ==== */
@@ -160,6 +188,7 @@ nav {
   height: 3%;
 }
 
+/* Minimilize Windows */
 @media screen and (min-width: 841px) {
   .credit{
     color: #606068;

@@ -179,8 +179,15 @@ nav {
   background-color: #202022;
 }
 
+/* == Profile == */
+.profilePicture {
+  width: 41px;
+  height: 41px;
+  border-radius: 20%;
+}
+
 /* ==== Credit - End Page ==== */
-.credit{
+.credit {
   color: #606068;
   text-align: center;
   font-family: 'SpotifyMedium';

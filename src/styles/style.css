@@ -119,6 +119,7 @@ nav {
   font-family: 'SpotifyMedium';
 }
 
+/* == Task == */
 .task {
   text-align: center;
   justify-content: center;
@@ -128,16 +129,6 @@ nav {
   border-radius: 9px;
   overflow: hidden;
   margin-bottom: 3vh;
-}
-
-.content-profile {
-  overflow: hidden;
-  color: white;
-  padding: 15px;
-  padding-top: 7px;
-  width: auto;
-  height: 100%;
-  font-family: 'SpotifyMedium';
 }
 
 .content-task {
@@ -166,8 +157,7 @@ nav {
   justify-content: center;
 }
 
-/* == Task == */
-.task1 {
+.taskSection {
   display: flex;
   overflow: hidden;
   width: auto;
@@ -179,12 +169,33 @@ nav {
   background-color: #202022;
 }
 
+
 /* == Profile == */
+.content-profile {
+  overflow: hidden;
+  color: white;
+  padding: 15px;
+  padding-top: 7px;
+  width: auto;
+  height: 100%;
+  font-family: 'SpotifyMedium';
+}
+
 .profilePicture {
   width: 41px;
   height: 41px;
+  float: left;
   border-radius: 20%;
+  margin: 0 10px 0 0;
+  /* background-color: red; */
 }
+
+.profilename {
+  width: auto;
+  height: auto;
+}
+
+
 
 /* ==== Credit - End Page ==== */
 .credit {

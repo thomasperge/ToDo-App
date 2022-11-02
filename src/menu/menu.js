@@ -29,5 +29,7 @@ for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
     div.className = 'taskSection';
     div.innerHTML = data.task.allTask[pas]
     document.getElementById("taskId").append(div);
-
 }
+
+const divCurrent = document.getElementById("currentTask")
+divCurrent.innerHTML = `Current Task : ${data.task.allTask.length}`

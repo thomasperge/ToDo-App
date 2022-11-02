@@ -1,5 +1,8 @@
 {
     "task" : {
-        "allTask": ["faire à manger", "aller dormir à 7h du matin"]
+        "allTask": [
+            "faire à manger",
+            "aller dormir à 7h du matin"
+        ]
     }
 }

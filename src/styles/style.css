@@ -147,7 +147,7 @@ nav {
 .task-middle {
   /* background-color: red; */
   padding: 10px;
-  width: auto;
+  width: 100%;
   height: auto;
   overflow: scroll;
   display: inline-block;
@@ -187,15 +187,24 @@ nav {
   float: left;
   border-radius: 20%;
   margin: 0 10px 0 0;
-  /* background-color: red; */
 }
 
 .profilename {
   width: auto;
-  height: auto;
+  height: 41px;
+  margin-bottom: 12px;
+  /* margin-bottom: 27px; */
 }
 
+.statsTitle {
+  text-align: center;
+  color: #606068;
+  margin-bottom: 7px;
+}
 
+.statsContent{
+  margin-bottom: 1px;
+}
 
 /* ==== Credit - End Page ==== */
 .credit {
@@ -205,6 +214,8 @@ nav {
   align-items: center;
   height: 3%;
 }
+
+
 
 /* Minimilize Windows */
 @media screen and (min-width: 841px) {

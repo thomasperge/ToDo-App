@@ -19,3 +19,15 @@ function close_app(){
 function minimize(){
     app.window.minimize()
 }
+
+
+import data from '../../data.json' assert { type: 'json' };
+
+for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
+    console.log(data.task.allTask[pas])
+    const div = document.createElement('div');
+    div.className = 'taskSection';
+    div.innerHTML = data.task.allTask[pas]
+    document.getElementById("taskId").append(div);
+
+}

@@ -9,7 +9,6 @@ const API = {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
     addButton.addEventListener("click", () => {

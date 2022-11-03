@@ -43,10 +43,10 @@ ipcMain.on("app/minimize", () => {
 
 ipcMain.on("app/addTask", () => {
 
-  function addTask(address) {    
+  function addTask(task) {    
     return new Promise((resolve, reject) => {
 
-      data.task.allTask.push(address)
+      data.task.allTask.push(task)
 
       fs.writeFile('data.json', JSON.stringify(data), (err) => {
         if (err) reject(err)
@@ -56,9 +56,6 @@ ipcMain.on("app/addTask", () => {
   }
   
   addTask('thomas1')
-    .then(result => {
-      console.log(result) 
-  })
   window.reload()
   
 });

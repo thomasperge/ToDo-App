@@ -1,3 +1,5 @@
+import data from '../../data.json' assert { type: 'json' };
+
 const MINUS = document.getElementById("minimize")
 const CLOSE_APP = document.getElementById("close-app")
 
@@ -20,16 +22,22 @@ function minimize(){
     app.window.minimize()
 }
 
-
-import data from '../../data.json' assert { type: 'json' };
-
-for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
-    console.log(data.task.allTask[pas])
+// === List all Task to do ===
+// check if there are no task save
+if(data.task.allTask.length == 0) {
     const div = document.createElement('div');
-    div.className = 'taskSection';
-    div.innerHTML = data.task.allTask[pas]
+    div.className = 'noTaskText';
+    div.innerHTML = 'No task recorded'
     document.getElementById("taskId").append(div);
+} else {
+    for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
+        const div = document.createElement('div');
+        div.className = 'taskSection';
+        div.innerHTML = data.task.allTask[pas]
+        document.getElementById("taskId").append(div);
+    }
 }
 
+// === Current Task ===
 const divCurrent = document.getElementById("currentTask")
 divCurrent.innerHTML = `Current Task : ${data.task.allTask.length}`

@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/styles/style.css">
   </head>
-  <body>
+  <body id="body">
 
     <!-- TitleBar -->
     <div class="titlebar">
       <nav>
         <div class="left-nav">
-          <span class="nav-link settings" id="add"><i class="fa-solid fa-plus" style="padding-top: 5px;"></i></i></span>
+          <span class="nav-link settings" id="addTask"><i class="fa-solid fa-plus" style="padding-top: 5px;"></i></i></span>
         </div>
 
         <div class="right-nav">
@@ -37,7 +37,7 @@
             <div class="profilename">Leonardo Dicaprio</div>
             <!-- Stats Profile -->
             <div class="statsTitle">Stats</div>
-            <div class="statsContent" id="currentTask">Current Task : 0</div>
+            <div class="statsContent" id="currentTask">Current Task : </div>
             <div class="statsContent">Finish Task: 0</div>
           </div>
           
@@ -67,6 +67,5 @@
     </div>
 
     <script src="src/menu/menu.js" type="module"></script>
-
   </body>
 </html>

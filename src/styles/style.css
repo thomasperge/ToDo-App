@@ -169,6 +169,20 @@ nav {
   background-color: #202022;
 }
 
+.noTaskText {
+  display: flex;
+  overflow: hidden;
+  width: auto;
+  height: 10px;
+  padding: 5%;
+  margin-bottom: 11px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #606068;
+  /* background-color: red; */
+}
+
 
 /* == Profile == */
 .content-profile {
@@ -200,11 +214,13 @@ nav {
   text-align: center;
   color: #606068;
   margin-bottom: 7px;
+  opacity: 78%;
 }
 
 .statsContent{
   margin-bottom: 1px;
 }
+
 
 /* ==== Credit - End Page ==== */
 .credit {

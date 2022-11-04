@@ -4,15 +4,15 @@ const { ipcRenderer, contextBridge } = require('electron')
 
 const API = {
     window: {
-        close: () => ipcRenderer.send("app/close"),
-        minimize: () => ipcRenderer.send("app/minimize")
+        close: () => ipcRenderer.send("appMain/close"),
+        minimize: () => ipcRenderer.send("appMain/minimize")
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
     addButton.addEventListener("click", () => {
-        ipcRenderer.send("app/addTask")
+        ipcRenderer.send("appMain/addTask")
     })
 })
 

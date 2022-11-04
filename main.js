@@ -39,21 +39,21 @@ async function main() {
 /**
  * Close Main App Page
  */
-ipcMain.on("app/close", () => {
+ipcMain.on("appMain/close", () => {
   app.quit();
 });
 
 /**
  * Minimize Main App Page
  */
-ipcMain.on("app/minimize", () => {
+ipcMain.on("appMain/minimize", () => {
   window.minimize();
 });
 
 /**
  * Add Task
  */
-ipcMain.on("app/addTask2", () => {
+ipcMain.on("appMain/addTask2", () => {
   function addTask(task) {    
     return new Promise((resolve, reject) => {
       data.task.allTask.push(task)
@@ -74,7 +74,7 @@ ipcMain.on("app/addTask2", () => {
 /**
  * When button Click, create new windows to add task
  */
-ipcMain.on("app/addTask", () => {
+ipcMain.on("appMain/addTask", () => {
   // create the browser window
   let window2
 

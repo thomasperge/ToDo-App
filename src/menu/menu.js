@@ -34,6 +34,15 @@ if(data.task.allTask.length == 0) {
         const div = document.createElement('div');
         div.className = 'taskSection';
         div.innerHTML = data.task.allTask[pas]
+
+        // Change this if the task are important
+        if (data.task.allTask[pas] == "cook lasagna") {
+            div.style.color = 'red'
+            div.insertAdjacentText('afterbegin', '✨ ')
+        } else {
+            div.style.color = 'white'
+        }
+
         document.getElementById("taskId").append(div);
     }
 }

@@ -72,7 +72,6 @@ ipcMain.on("appAdd/minimize", () => {
 });
 
 
-
 /**
  * Add Task when button click
  */

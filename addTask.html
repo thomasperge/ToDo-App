@@ -5,16 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/style.css">
-</head>
+    <link rel="stylesheet" href="./src/styles/addTask.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
 <body>
     <!-- TitleBar -->
-    <div class="titlebarAddTask">
-      <div class="titlebarAddTaskButton">
-        <span class="nav-link minus" id="minimizeAdd">&minus;</span>
-        <span class="nav-link close" id="close-appAdd">&#10006;</span>
+    <div class="titlebar">
+      <div class="titlebarAddTask">
+        <nav class="titlebarAddTaskButton">
+          <span class="nav-link minus" id="minimizeAdd">&minus;</span>
+          <span class="nav-link close" id="close-appAdd">&#10006;</span>
+        </nav>
       </div>
     </div>
-
     <!-- Content -->
+
+    <div class="container-task">
+      <div class="addTaskContent">
+        <!-- Add Task -->
+        <div class="titlePart">Add Task</div>
+        <input type="text" placeholder="cook lasagna" class="input-task" id="taskInputText">
+
+        <!-- Put the task section -->
+        <div class="titlePart">Categorie</div>
+        <div class="titlePart" style="opacity: 50%; margin-top: 12%">soon...</div>
+
+        <!-- Button to submit the task -->
+        <div class="buttonSendBanner">
+          <div class="buttonArea" id="addTaskButtonClick">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+        </div>
+        
+      </div>
+      <div class="credit">by elthomas</div>
+    </div>
+    
 </body>
 </html>

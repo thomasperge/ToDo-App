@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "SpotifyMedium";
+    src: url("../../font/GothamMedium.ttf");
+}
+
+/* == Container == */
+.container-task {
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    height: 87vh;
+    padding: 3%;
+    padding-bottom: 6vh;
+    margin-bottom: 4vh;
+}
+
+.addTaskContent {
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: 95%;
+    background-color: #2c2c2f;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+/* == Task Input == */
+.input-task {
+    margin-top: 15px;
+    width: 75%;
+    height: 8%;
+    color: white;
+    background-color: #202022;
+    border-radius: 50px;
+    cursor: text;
+    padding: 0 11px 0 11px;
+    border: #606068;
+    font-family: 'SpotifyMedium';
+}
+
+.input-task:focus  {
+    outline: none;
+    caret-color: white;
+}
+
+
+/* == Button to submit the task == */
+.buttonSendBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 55px;
+}
+
+.buttonArea {
+    margin-top: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    background-color:rebeccapurple;
+}
+
+.buttonArea:hover {
+    width: 51px;
+    height: 26px;
+}
+
+@media screen and (min-width: 640px) and (max-width: 640px) {
+    .credit{
+      color: #606068;
+      text-align: center;
+      font-family: 'SpotifyMedium';
+      align-items: center;
+      height: 3%;
+      padding-bottom: 15px;
+    }
+}

@@ -2,7 +2,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require("fs");
-const data = require("./data.json")
+const data = require("./data.json");
+const { windowsStore } = require('process');
+const { value } = require('./src/addTask/add.js')
 
 app.whenReady().then(main);
 
@@ -43,6 +45,10 @@ async function main() {
  */
 ipcMain.on("appMain/close", () => {
   app.quit();
+  // Close Windows 2 if windows 2 are open :
+  if (!window2?.isDestroyed() && window2?.isFocusable()) {
+    window2.close()
+  }
 });
 
 /**
@@ -71,39 +77,39 @@ ipcMain.on("appAdd/minimize", () => {
 /**
  * Add Task when button click
  */
-// ipcMain.on("appMain/addTask2", () => {
-//   function addTask(task) {    
-//     return new Promise((resolve, reject) => {
-//       data.task.allTask.push(task)
+ipcMain.on("appMain/addTaskSend", () => {
+  // function addTask(task) {    
+  //   return new Promise((resolve, reject) => {
+  //     data.task.allTask.push(task)
 
-//       fs.writeFile('data.json', JSON.stringify(data), (err) => {
-//         if (err) reject(err)
-//         resolve("File saved.")
-//       })
-//     });
-//   }
+  //     fs.writeFile('data.json', JSON.stringify(data), (err) => {
+  //       if (err) reject(err)
+  //       resolve("File saved.")
+  //     })
+  //   });
+  // }
 
-//   addTask('thomas1')
-//   console.log(data.task.allTask)
-//   window.reload()
-// });
+  // addTask(addTaskFunc.getValue())
+  // console.log(data.task.allTask)
+  // window.reload()
+  console.log("HERE =>")
+  console.log(value.getValue())
+});
 
 
 /**
  * When button Click, create new windows to add task
  */
-ipcMain.on("appMain/addTask", () => {
-  const isPlayerWindowOpened = () => !window2?.isDestroyed() && window2?.isFocusable();
-
+ipcMain.on("appMain/addTaskWindows", () => {
+  const isPlayerWindow2Opened = () => !window2?.isDestroyed() && window2?.isFocusable();
   // Check if windows2 is already open
-  if (!isPlayerWindowOpened()) {
-    // create the browser window
+  if (!isPlayerWindow2Opened()) {
     window2 = new BrowserWindow({
       frame: false,
-      // autoHideMenuBar: true,
+      autoHideMenuBar: true,
       width: 640,
       height: 420,
-      // resizable: false,
+      resizable: true,
       webPreferences: {
         contextIsolation: true,
         nodeIntegration: true,

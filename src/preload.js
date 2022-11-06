@@ -12,8 +12,16 @@ const API = {
 // == Create New Window ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
-    addButton.addEventListener("click", () => {
-        ipcRenderer.send("appMain/addTask")
+    addButton?.addEventListener("click", () => {
+        ipcRenderer.send("appMain/addTaskWindows")
+    })
+})
+
+// == Button => Reply the input text ==
+document.addEventListener('DOMContentLoaded', function() {
+    let addButtonSend = document.getElementById("addTaskButtonClick")
+    addButtonSend?.addEventListener("click", () => {
+        ipcRenderer.send("appMain/addTaskSend")
     })
 })
 
@@ -21,12 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     let closeButtonAdd = document.getElementById("close-appAdd")
     let minButtonAdd = document.getElementById("minimizeAdd")
-
-    closeButtonAdd.addEventListener("click", () => {
+    closeButtonAdd?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/close")
     })
 
-    minButtonAdd.addEventListener("click", () => {
+    minButtonAdd?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/minimize")
     })
 })

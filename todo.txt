@@ -1,0 +1,10 @@
+=> A faire :
+- Finir le input text pour ajouter une tache
+- Permettre la suppression de tache et la finalisation d'une tache
+- Permettre de mettre une tache comme importante (l'afficher en rouge)
+- Ajouter au debut fenêtre de login pour l'utilisateur (avec pseudo et image)
+    => Afficher l'image et le pseudo
+- Ajout des categories des tâches
+
+=> A la fin :
+- Ajouter Stats (dernier truc à faire)

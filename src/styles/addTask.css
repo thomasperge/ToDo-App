@@ -44,31 +44,54 @@
     caret-color: white;
 }
 
-
+/* ==== Windows to Add Task ==== */
 /* == Button to submit the task == */
 .buttonSendBanner {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: 55px;
+    width: 100%;
+    height: auto;
 }
 
 .buttonArea {
-    margin-top: 32%;
+    margin-top: 14%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 25px;
     border-radius: 5px;
-    background-color:rebeccapurple;
+    background-color:rgba(0, 255, 153, 0.706);
 }
 
 .buttonArea:hover {
     width: 51px;
     height: 26px;
 }
+
+/* == CheckBox to important task == */
+.importantBanner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 29px;
+    padding-left: 11%;
+    /* background-color: red; */
+}
+
+.important {
+    font-size: 16px;
+    color: rgb(186, 65, 65);
+    font-family: 'SpotifyMedium';
+}
+
+input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    accent-color: red;
+}
+
 
 @media screen and (min-width: 640px) and (max-width: 640px) {
     .credit{

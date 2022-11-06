@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require("fs");
 const data = require("./data.json");
 const { windowsStore } = require('process');
-const { value } = require('./src/addTask/add.js')
 
 app.whenReady().then(main);
 
@@ -88,8 +87,11 @@ ipcMain.on("appMain/addTaskSend", (event, args) => {
       })
     });
   }
-
-  addTask(args);
+  // Check length of input value
+  if (args.length > 0) {
+    addTask(args)
+  };
+  
   window.reload();
   window2.close();
 });
@@ -107,7 +109,7 @@ ipcMain.on("appMain/addTaskWindows", () => {
       autoHideMenuBar: true,
       width: 640,
       height: 420,
-      resizable: true,
+      resizable: false,
       webPreferences: {
         contextIsolation: true,
         nodeIntegration: true,

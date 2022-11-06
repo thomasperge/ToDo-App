@@ -21,7 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
     addButtonSend?.addEventListener("click", () => {
-        ipcRenderer.send("appMain/addTaskSend")
+        let input = document.getElementById("taskInputText").value
+
+        // input?.addEventListener("click", () => {
+        //     return input.value
+        // })
+        
+        ipcRenderer.send("appMain/addTaskSend", (event, input))
     })
 })
 

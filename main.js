@@ -77,23 +77,21 @@ ipcMain.on("appAdd/minimize", () => {
 /**
  * Add Task when button click
  */
-ipcMain.on("appMain/addTaskSend", () => {
-  // function addTask(task) {    
-  //   return new Promise((resolve, reject) => {
-  //     data.task.allTask.push(task)
+ipcMain.on("appMain/addTaskSend", (event, args) => {
+  function addTask(task) {    
+    return new Promise((resolve, reject) => {
+      data.task.allTask.push(task)
 
-  //     fs.writeFile('data.json', JSON.stringify(data), (err) => {
-  //       if (err) reject(err)
-  //       resolve("File saved.")
-  //     })
-  //   });
-  // }
+      fs.writeFile('data.json', JSON.stringify(data), (err) => {
+        if (err) reject(err)
+        resolve("File saved.")
+      })
+    });
+  }
 
-  // addTask(addTaskFunc.getValue())
-  // console.log(data.task.allTask)
-  // window.reload()
-  console.log("HERE =>")
-  console.log(value.getValue())
+  addTask(args);
+  window.reload();
+  window2.close();
 });
 
 

@@ -1,7 +1,5 @@
 const { ipcRenderer, contextBridge } = require('electron')
 
-// Preload File est un fichier qui connecte le node backend et le frontend
-
 const API = {
     window: {
         close: () => ipcRenderer.send("appMain/close"),
@@ -9,7 +7,7 @@ const API = {
     },
 }
 
-// == Create New Window ==
+// == Create New Window to add a Task ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
     addButton?.addEventListener("click", () => {
@@ -17,21 +15,16 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
-// == Button => Reply the input text ==
+// == Button commit the task (send the input text to ipcMain) ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
     addButtonSend?.addEventListener("click", () => {
         let input = document.getElementById("taskInputText").value
-
-        // input?.addEventListener("click", () => {
-        //     return input.value
-        // })
-        
         ipcRenderer.send("appMain/addTaskSend", (event, input))
     })
 })
 
-// == Close and Minimize Windows2 ==
+// == Close and minimize windows2 ==
 document.addEventListener('DOMContentLoaded', function() {
     let closeButtonAdd = document.getElementById("close-appAdd")
     let minButtonAdd = document.getElementById("minimizeAdd")

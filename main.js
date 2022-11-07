@@ -33,8 +33,11 @@ async function main() {
     }
   })
   // window.webContents.openDevTools();
-  window.on("ready-to-show", window.show)
-  window.loadFile('index.html')
+
+  // window.on("ready-to-show", window.show)
+  // window.loadFile('index.html')
+  window.loadFile('loading.html')
+  setTimeout(() => window.loadFile('index.html'), 3000)
 };
 
 
@@ -107,6 +110,7 @@ ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
     addTaskData(newTask)
   };
   
+  // Reload Window & Close window2:
   window.reload();
   window2.close();
 });
@@ -143,9 +147,14 @@ ipcMain.on("appMain/addTaskWindows", () => {
  * Function delete task from data.json
  * @function
  */
-function deleteTask(idTask) {
+function deleteTask(idTask, finishTask) {
+  // Delete Task :
   data.task.allTask = data.task.allTask.filter((el) => el.id != idTask);
-  console.log(data)
+
+  // Add +1 all task finished :
+  if(finishTask) {
+    data.task.totalFinishTask += 1
+  }
 
   fs.writeFile('data.json', JSON.stringify(data), (err) => {
     if (err) reject(err)
@@ -161,7 +170,9 @@ ipcMain.on("appMain/deleteTask", (event, _myreq) => {
   console.log("Delete Task => ", _myreq.id)
 
   // Delete Task :
-  deleteTask(_myreq.id)
+  deleteTask(_myreq.id, false)
+
+  // Reload Window :
   window.reload();
 });
 
@@ -173,6 +184,8 @@ ipcMain.on("appMain/finishTask", (event, _myreq) => {
   console.log("Finish Task => ", _myreq.id)
 
   // Delete Task :
-  deleteTask(_myreq.id)
+  deleteTask(_myreq.id, true)
+
+  // Reload Window :
   window.reload();
 });

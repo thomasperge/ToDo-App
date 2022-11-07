@@ -7,6 +7,7 @@ const API = {
     },
 }
 
+
 // == Create New Window to add a Task ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
@@ -15,14 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
+
 // == Button commit the task (send the input text to ipcMain) ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
     addButtonSend?.addEventListener("click", () => {
         let input = document.getElementById("taskInputText").value
-        ipcRenderer.send("appMain/addTaskSend", (event, input))
+        const cb = document.getElementById('important');
+
+        var _myreq = {
+            args: input, //0 is no error, 4 is error with message, etc.
+            checked: cb.checked //can include error message (if any)
+        };
+
+        ipcRenderer.send("appMain/addTaskSend", (event, _myreq))
     })
 })
+
 
 // == Close and minimize windows2 ==
 document.addEventListener('DOMContentLoaded', function() {

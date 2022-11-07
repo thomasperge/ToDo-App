@@ -75,7 +75,7 @@ ipcMain.on("appAdd/minimize", () => {
 /**
  * Add Task when button click
  */
-ipcMain.on("appMain/addTaskSend", (event, args) => {
+ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
   function addTask(task) {    
     return new Promise((resolve, reject) => {
       data.task.allTask.push(task)
@@ -86,9 +86,10 @@ ipcMain.on("appMain/addTaskSend", (event, args) => {
       })
     });
   }
+  console.log("HERE => ", _myreq.checked)
   // Check length of input value
-  if (args.length > 0) {
-    addTask(args)
+  if (_myreq.args.length > 0) {
+    addTask(_myreq.args)
   };
   
   window.reload();

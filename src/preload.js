@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
+// == Button Delete and Finish a Task (main page index.html) ==
+document.addEventListener('DOMContentLoaded', function() {
+    let deleteButton = document.getElementById("addTaskButtonClick")
+    let finishButton = document.getElementById("addTaskButtonClick")
+
+    addButtonSend?.addEventListener("click", () => {
+        let input = document.getElementById("taskInputText").value
+        const cb = document.getElementById('important');
+
+        var _myreq = {
+            task: input, //0 is no error, 4 is error with message, etc.
+            checked: cb.checked //can include error message (if any)
+        };
+
+        ipcRenderer.send("appMain/addTaskSend", (event, _myreq))
+    })
+})
+
 // == Close and minimize windows2 ==
 document.addEventListener('DOMContentLoaded', function() {
     let closeButtonAdd = document.getElementById("close-appAdd")

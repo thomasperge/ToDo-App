@@ -1,4 +1,6 @@
 const { ipcRenderer, contextBridge } = require('electron')
+const data = require('./../data.json')
+// import data from './../data.json' assert { type: 'json' };
 
 const API = {
     window: {
@@ -37,26 +39,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // == Button Delete and Finish a Task (main page index.html) ==
 document.addEventListener('DOMContentLoaded', function() {
-    let deleteButton = document.getElementById("deleteButton")
-    let finishButton = document.getElementById("finishButton")
 
-    // Delete Button :
-    deleteButton?.addEventListener("click", () => {
-        var _myreq = {
-            delete: true,
-        };
+    for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
 
-        ipcRenderer.send("appMain/deleteTask", (event, _myreq))
-    });
+        let deleteButton = document.getElementById("deleteButton" + data.task.allTask[pas].id.toString())
+        let finishButton = document.getElementById("finishButton" + data.task.allTask[pas].id.toString())
 
-    // Finish Button :
-    finishButton?.addEventListener("click", () => {
-        var _myreq = {
-            delete: true,
-        };
+        // Delete Button :
+        deleteButton?.addEventListener("click", () => {
 
-        ipcRenderer.send("appMain/finishTask", (event, _myreq))
-    })
+            var _myreq = {
+                id: data.task.allTask[pas].id,
+                task: data.task.allTask[pas].taskText,
+                checked: data.task.allTask[pas].check
+            };
+
+            ipcRenderer.send("appMain/deleteTask", (event, _myreq))
+        });
+
+        // Finish Button :
+        finishButton?.addEventListener("click", () => {
+
+            var _myreq = {
+                id: data.task.allTask[pas].id,
+                task: data.task.allTask[pas].taskText,
+                checked: data.task.allTask[pas].check
+            };
+
+            ipcRenderer.send("appMain/finishTask", (event, _myreq))
+        })
+    }
 })
 
 // == Close and minimize windows2 ==

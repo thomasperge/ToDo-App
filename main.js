@@ -144,18 +144,13 @@ ipcMain.on("appMain/addTaskWindows", () => {
 /**
  * Delete Task
  */
-ipcMain.on("appMain/deleteTask", () => {
-  console.log("Delete Task")
-  for(let index = 0; index < data.task.allTask.length; index++) {
-    if(data.task.allTask[index].taskText == "test thomas2") {
-      console.log("HERE")
-    }
-  }
+ipcMain.on("appMain/deleteTask", (event, _myreq) => {
+  console.log("Delete Task => ", _myreq.id)
 });
 
 /**
  * Finish Task
  */
-ipcMain.on("appMain/finishTask", () => {
-  console.log("Finish Task")
+ipcMain.on("appMain/finishTask", (event, _myreq) => {
+  console.log("Finish Task => ", _myreq.id)
 });

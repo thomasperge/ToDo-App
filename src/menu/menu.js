@@ -44,8 +44,8 @@ if(data.task.allTask.length == 0) {
         finishButton.className = "fa-solid fa-check"
 
         // == Initialize id for each div ==
-        buttonDelete.id = "deleteButton"
-        finishButton.id = "finishButton"
+        buttonDelete.id = "deleteButton" + data.task.allTask[pas].id.toString()
+        finishButton.id = "finishButton" + data.task.allTask[pas].id.toString()
 
         // == Log the main div ==
         console.log(div)

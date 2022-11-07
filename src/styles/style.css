@@ -189,7 +189,7 @@ body {
   margin-bottom: 11px;
   text-align: left;
   background-color: #202022;
-  color: white
+  color: white;
 }
 
 .noTaskText {
@@ -241,7 +241,6 @@ body {
   width: auto;
   height: 41px;
   margin-bottom: 12px;
-  /* margin-bottom: 27px; */
 }
 
 .statsTitle {
@@ -254,6 +253,66 @@ body {
 .statsContent{
   margin-bottom: 1px;
 }
+
+/* == Delete Button == */
+.deleteButtonArea {
+  display: flex;
+  width: auto;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 0;
+  margin: 0px 0px 0px auto;
+  /* background-color: red; */
+}
+
+.fa-trash-can {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-trash-can:hover {
+  -webkit-transform:scale(0.9);
+  transform:scale(0.9);
+}
+
+.fa-trash-can {
+  width: 23px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.fa-trash-can:hover{
+  width: 25px;
+}
+
+/*  */
+.fa-check {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-check:hover {
+  -webkit-transform:scale(0.9);
+  transform:scale(0.9);
+}
+
+.fa-check {
+  width: 23px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.fa-check:hover{
+  width: 25px;
+}
+
 /* =========================== */
 
 
@@ -277,3 +336,15 @@ body {
     height: 3%;
   }
 }
+
+@media screen and (max-width: 685px) {
+  .profilename {
+    width: auto;
+    height: 41px;
+    margin-bottom: 12px;
+    margin-bottom: 55px;
+  }
+}
+
+
+

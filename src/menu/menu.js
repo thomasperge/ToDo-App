@@ -32,15 +32,32 @@ if(data.task.allTask.length == 0) {
 } else {
     for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
         const div = document.createElement('div');
-        div.className = 'taskSection';
-        div.innerHTML = data.task.allTask[pas].taskText
+        const deleteButtonArea = document.createElement('div')
+        const buttonDelete = document.createElement('i')
+        const finishButton = document.createElement('i')
 
+        div.className = 'taskSection';
+        deleteButtonArea.className = "deleteButtonArea"
+        buttonDelete.className = "fa-regular fa-trash-can"
+        finishButton.className = "fa-solid fa-check"
+
+        div.innerHTML = data.task.allTask[pas].taskText;
+
+        console.log(div)
+
+        finishButton.style.color = '#12ff00'
+        finishButton.style.marginRight = '15px'
+        
         // Change this if the task are important (check the data.json)
         if (data.task.allTask[pas].check == true) {
             div.style.color = 'red'
+            buttonDelete.style.color = 'white'
             div.insertAdjacentText('afterbegin', '✨ ')
         }
 
+        div.appendChild(deleteButtonArea)
+        deleteButtonArea.appendChild(finishButton)
+        deleteButtonArea.appendChild(buttonDelete)
         document.getElementById("taskId").append(div);
     }
 }

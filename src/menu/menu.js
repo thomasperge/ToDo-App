@@ -33,14 +33,12 @@ if(data.task.allTask.length == 0) {
     for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
         const div = document.createElement('div');
         div.className = 'taskSection';
-        div.innerHTML = data.task.allTask[pas]
+        div.innerHTML = data.task.allTask[pas].taskText
 
         // Change this if the task are important (check the data.json)
-        if (data.task.allTask[pas] == "cook lasagna") {
+        if (data.task.allTask[pas].check == true) {
             div.style.color = 'red'
             div.insertAdjacentText('afterbegin', '✨ ')
-        } else {
-            div.style.color = 'white'
         }
 
         document.getElementById("taskId").append(div);

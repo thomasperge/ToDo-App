@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cb = document.getElementById('important');
 
         var _myreq = {
-            args: input, //0 is no error, 4 is error with message, etc.
+            task: input, //0 is no error, 4 is error with message, etc.
             checked: cb.checked //can include error message (if any)
         };
 

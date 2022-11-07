@@ -145,6 +145,7 @@ ipcMain.on("appMain/addTaskWindows", () => {
  * Delete Task
  */
 ipcMain.on("appMain/deleteTask", (event, _myreq) => {
+  // Log :
   console.log("Delete Task => ", _myreq.id)
 });
 
@@ -152,5 +153,6 @@ ipcMain.on("appMain/deleteTask", (event, _myreq) => {
  * Finish Task
  */
 ipcMain.on("appMain/finishTask", (event, _myreq) => {
+  // Log :
   console.log("Finish Task => ", _myreq.id)
 });

@@ -40,12 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // == Button Delete and Finish a Task (main page index.html) ==
 document.addEventListener('DOMContentLoaded', function() {
 
+    // == Loop into the DataBase ==
     for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
 
+        // Initialize the different id existing according to the DB id :
         let deleteButton = document.getElementById("deleteButton" + data.task.allTask[pas].id.toString())
         let finishButton = document.getElementById("finishButton" + data.task.allTask[pas].id.toString())
 
-        // Delete Button :
+        // Delete Button Event :
         deleteButton?.addEventListener("click", () => {
 
             var _myreq = {
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ipcRenderer.send("appMain/deleteTask", (event, _myreq))
         });
 
-        // Finish Button :
+        // Finish Button Event :
         finishButton?.addEventListener("click", () => {
 
             var _myreq = {

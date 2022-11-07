@@ -2,8 +2,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require("fs");
-const data = require("./data.json");
-const { windowsStore } = require('process');
+var data = require("./data.json");
 
 app.whenReady().then(main);
 
@@ -100,7 +99,7 @@ ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
           if (err) reject(err)
           resolve("File saved.")
         })
-      }) ;
+      });
   }
 
   // Check length of input value
@@ -140,6 +139,19 @@ ipcMain.on("appMain/addTaskWindows", () => {
   }
 });
 
+/**
+ * Function delete task from data.json
+ * @function
+ */
+function deleteTask(idTask) {
+  data.task.allTask = data.task.allTask.filter((el) => el.id != idTask);
+  console.log(data)
+
+  fs.writeFile('data.json', JSON.stringify(data), (err) => {
+    if (err) reject(err)
+  });
+}
+
 
 /**
  * Delete Task
@@ -147,6 +159,10 @@ ipcMain.on("appMain/addTaskWindows", () => {
 ipcMain.on("appMain/deleteTask", (event, _myreq) => {
   // Log :
   console.log("Delete Task => ", _myreq.id)
+
+  // Delete Task :
+  deleteTask(_myreq.id)
+  window.reload();
 });
 
 /**
@@ -155,4 +171,8 @@ ipcMain.on("appMain/deleteTask", (event, _myreq) => {
 ipcMain.on("appMain/finishTask", (event, _myreq) => {
   // Log :
   console.log("Finish Task => ", _myreq.id)
+
+  // Delete Task :
+  deleteTask(_myreq.id)
+  window.reload();
 });

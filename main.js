@@ -57,6 +57,7 @@ ipcMain.on("appMain/minimize", () => {
   window.minimize();
 });
 
+
 /**
  * Close Add-Task Page
  */
@@ -77,7 +78,16 @@ ipcMain.on("appAdd/minimize", () => {
  */
 ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
 
+  var idTask
+
+  if(data.task.allTask.length == 0) {
+    idTask = 0
+  } else {
+    idTask = data.task.allTask[data.task.allTask.length-1].id + 1
+  }
+
   var newTask = {
+    id: idTask,
     taskText: _myreq.task,
     check: _myreq.checked
   }
@@ -128,4 +138,24 @@ ipcMain.on("appMain/addTaskWindows", () => {
   } else {
     console.log("can't open a new windows")
   }
+});
+
+
+/**
+ * Delete Task
+ */
+ipcMain.on("appMain/deleteTask", () => {
+  console.log("Delete Task")
+  for(let index = 0; index < data.task.allTask.length; index++) {
+    if(data.task.allTask[index].taskText == "test thomas2") {
+      console.log("HERE")
+    }
+  }
+});
+
+/**
+ * Finish Task
+ */
+ipcMain.on("appMain/finishTask", () => {
+  console.log("Finish Task")
 });

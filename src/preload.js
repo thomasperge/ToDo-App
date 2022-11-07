@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // == Button commit the task (send the input text to ipcMain) ==
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
+
     addButtonSend?.addEventListener("click", () => {
         let input = document.getElementById("taskInputText").value
         const cb = document.getElementById('important');
 
         var _myreq = {
-            task: input, //0 is no error, 4 is error with message, etc.
-            checked: cb.checked //can include error message (if any)
+            task: input,
+            checked: cb.checked
         };
 
         ipcRenderer.send("appMain/addTaskSend", (event, _myreq))
@@ -36,19 +37,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // == Button Delete and Finish a Task (main page index.html) ==
 document.addEventListener('DOMContentLoaded', function() {
-    let deleteButton = document.getElementById("addTaskButtonClick")
-    let finishButton = document.getElementById("addTaskButtonClick")
+    let deleteButton = document.getElementById("deleteButton")
+    let finishButton = document.getElementById("finishButton")
 
-    addButtonSend?.addEventListener("click", () => {
-        let input = document.getElementById("taskInputText").value
-        const cb = document.getElementById('important');
-
+    // Delete Button :
+    deleteButton?.addEventListener("click", () => {
         var _myreq = {
-            task: input, //0 is no error, 4 is error with message, etc.
-            checked: cb.checked //can include error message (if any)
+            delete: true,
         };
 
-        ipcRenderer.send("appMain/addTaskSend", (event, _myreq))
+        ipcRenderer.send("appMain/deleteTask", (event, _myreq))
+    });
+
+    // Finish Button :
+    finishButton?.addEventListener("click", () => {
+        var _myreq = {
+            delete: true,
+        };
+
+        ipcRenderer.send("appMain/finishTask", (event, _myreq))
     })
 })
 
@@ -56,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     let closeButtonAdd = document.getElementById("close-appAdd")
     let minButtonAdd = document.getElementById("minimizeAdd")
+
     closeButtonAdd?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/close")
     })

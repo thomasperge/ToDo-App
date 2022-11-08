@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/login.css">
     <link rel="stylesheet" href="./src/styles/style.css">
-    <link rel="stylesheet" href="./src/styles/addTask.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <title>ToDo - add</title>
@@ -25,61 +24,54 @@
 
     <!-- Content -->
     <div class="container-task-login">
-
       <div class="animation-mouse-area">
 
-        <div class="test">
           <div id="happy" class="icon">
-            TEST
+            <p>TEST</p>
           </div>
-  
           <div id="ok" class="icon">
-            TEST
+            <p>TEST</p>
           </div>
-        </div>
-
       </div>
+    </div>
 
-      <!-- Script Image -->
-      <script>
-        $(function(){
-          boxRollovers();
+    <!-- Script Image -->
+    <script>
+      $(function(){
+        boxRollovers();
+      });
+      
+      function boxRollovers() {
+        $selector = $(".animation-mouse-area");
+        XAngle = 0;
+        YAngle = 0;
+        // == Width div when mous hover the window ==
+        Z = 10;
+        
+        $selector.on("mousemove",function(e){
+          var $this = $(this);
+          var XRel = e.pageX - $this.offset().left;
+          var YRel = e.pageY - $this.offset().top;
+          var width = $this.width();
+        
+          YAngle = -(0.5 - (XRel / width)) * 30; 
+          XAngle = (0.5 - (YRel / width)) * 30;
+          updateView($this.children(".icon"));
         });
         
-        function boxRollovers()
-        {
-          // $selector = $("li");
-          $selector = $(".test");
-          XAngle = 0;
-          YAngle = 0;
-          Z = 50;
-          
-          $selector.on("mousemove",function(e){
-            var $this = $(this);
-            var XRel = e.pageX - $this.offset().left;
-            var YRel = e.pageY - $this.offset().top;
-            var width = $this.width();
-          
-            YAngle = -(0.5 - (XRel / width)) * 40; 
-            XAngle = (0.5 - (YRel / width)) * 40;
-            updateView($this.children(".icon"));
-          });
-          
-          $selector.on("mouseleave",function(){
-            oLayer = $(this).children(".icon");
-            oLayer.css({"transform":"perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)","transition":"all 150ms linear 0s","-webkit-transition":"all 150ms linear 0s"});
-            oLayer.find("strong").css({"transform":"perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)","transition":"all 150ms linear 0s","-webkit-transition":"all 150ms linear 0s"});
-          });
-        }
-        
-        function updateView(oLayer)
-        {
-          oLayer.css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + XAngle + "deg) rotateY(" + YAngle + "deg)","transition":"none","-webkit-transition":"none"});
-          oLayer.find("strong").css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + (XAngle / 0.66) + "deg) rotateY(" + (YAngle / 0.66) + "deg)","transition":"none","-webkit-transition":"none"});
-        }
-      </script>
+        $selector.on("mouseleave",function(){
+          oLayer = $(this).children(".icon");
+          oLayer.css({"transform":"perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)","transition":"all 150ms linear 0s","-webkit-transition":"all 150ms linear 0s"});
+          oLayer.find("strong").css({"transform":"perspective(525px) translateZ(0) rotateX(0deg) rotateY(0deg)","transition":"all 150ms linear 0s","-webkit-transition":"all 150ms linear 0s"});
+        });
+      }
+      
+      function updateView(oLayer) {
+        oLayer.css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + XAngle + "deg) rotateY(" + YAngle + "deg)","transition":"none","-webkit-transition":"none"});
+        oLayer.find("p").css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + (XAngle / 0.66) + "deg) rotateY(" + (YAngle / 0.66) + "deg)","transition":"none","-webkit-transition":"none"});
+      }
+    </script>
 
 
-    </div>
 </body>
 </html>

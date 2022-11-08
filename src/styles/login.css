@@ -1,0 +1,49 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* == Area Container and Mouse Animation == */
+.container-task-login {
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    height: 94.5vh;
+}
+
+.animation-mouse-area {
+    display: grid;
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+}
+
+li {
+    float: left;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    padding-right: 5%;
+    font-weight: bold;
+}
+
+.icon {
+    width: 15%;
+    height: 15%;
+    font-size: 200%;	
+    border-radius: 0.5em;
+    padding:0.5em;
+}
+
+#happy {
+    background: yellow;	
+}
+
+#ok {
+    background: #fcf9a1;
+}
+
+#sad {
+    background: #fca1a1;
+}

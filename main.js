@@ -5,6 +5,7 @@ const fs = require("fs");
 var data = require("./data.json");
 
 
+// == Run the login Page or Main Page ==
 if (data.profile.profileDetect == false) {
   // == No login ==
   app.whenReady().then(login);
@@ -56,8 +57,8 @@ async function login() {
   windowLogin = new BrowserWindow({
     frame: false,
     autoHideMenuBar: true,
-    width: 640,
-    height: 420,
+    width: 940,
+    height: 620,
     resizable: true,
     webPreferences: {
       contextIsolation: true,

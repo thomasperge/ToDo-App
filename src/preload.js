@@ -10,7 +10,9 @@ const API = {
 }
 
 
-// == Create New Window to add a Task ==
+/**
+ * Create New Window to add a Task
+ */
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
     addButton?.addEventListener("click", () => {
@@ -19,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-// == Button commit the task (send the input text to ipcMain) ==
+/**
+ * Button commit the task (send the input text to ipcMain)
+ */
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
 
@@ -37,9 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-// == Button Delete and Finish a Task (main page index.html) ==
+/**
+ * Button Delete and Finish a Task (main page index.html)
+ */
 document.addEventListener('DOMContentLoaded', function() {
-
     // == Loop into the DataBase ==
     for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
 
@@ -73,17 +78,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 
-// == Close and minimize windows2 ==
+/**
+ * Close and minimize Window add task / Window Login
+ */
 document.addEventListener('DOMContentLoaded', function() {
     let closeButtonAdd = document.getElementById("close-appAdd")
     let minButtonAdd = document.getElementById("minimizeAdd")
 
+    let closeButtonLogin = document.getElementById("close-appLogin")
+    let minButtonLogin = document.getElementById("minimizeLogin")
+
     closeButtonAdd?.addEventListener("click", () => {
-        ipcRenderer.send("appAdd/close")
+        ipcRenderer.send("appAdd/closeAdd")
     })
 
     minButtonAdd?.addEventListener("click", () => {
-        ipcRenderer.send("appAdd/minimize")
+        ipcRenderer.send("appAdd/minimizeAdd")
+    })
+
+    closeButtonLogin?.addEventListener("click", () => {
+        ipcRenderer.send("appAdd/closeLogin")
+    })
+
+    minButtonLogin?.addEventListener("click", () => {
+        ipcRenderer.send("appAdd/minimizeLogin")
     })
 })
 

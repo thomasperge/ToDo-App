@@ -1,10 +1,11 @@
 import data from '../../data.json' assert { type: 'json' };
 
-const MINUS = document.getElementById("minimize")
-const CLOSE_APP = document.getElementById("close-app")
+const MINUS_ADD = document.getElementById("minimize")
+const CLOSE_APP_ADD = document.getElementById("close-app")
 
-MINUS.addEventListener("click", minimize)
-CLOSE_APP.addEventListener("click", close_app)
+MINUS_ADD.addEventListener("click", minimize)
+CLOSE_APP_ADD.addEventListener("click", close_app)
+
 
 /**
  * Close App

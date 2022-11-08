@@ -4,13 +4,21 @@ const path = require('path');
 const fs = require("fs");
 var data = require("./data.json");
 
-app.whenReady().then(main);
+
+if (data.profile.profileDetect == false) {
+  // == No login ==
+  app.whenReady().then(login);
+} else {
+  // == Login ==
+  app.whenReady().then(main);
+}
 
 app.disableHardwareAcceleration();
 
 // Create the main windows
+let windowLogin;
 let window;
-let window2
+let window2;
 
 /**
  * Main Function - Index Page (index.html)
@@ -34,13 +42,35 @@ async function main() {
   })
   // window.webContents.openDevTools();
 
-  // window.on("ready-to-show", window.show)
-  // window.loadFile('index.html')
-  window.loadFile('loading.html')
-  setTimeout(() => window.loadFile('index.html'), 3000)
+  window.on("ready-to-show", window.show)
+  window.loadFile('index.html')
 };
 
 
+
+/**
+ * Login Function - Login Page (login.html)
+ * @function
+ */
+async function login() {
+  windowLogin = new BrowserWindow({
+    frame: false,
+    autoHideMenuBar: true,
+    width: 640,
+    height: 420,
+    resizable: true,
+    webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, "./src/preload.js") // use a preload script
+    }
+  });
+
+  windowLogin.on("ready-to-show", windowLogin.show);
+  windowLogin.loadFile('login.html');
+}
+
+// ====== Close and Minimize App ======
 /**
  * Close Main App Page
  */
@@ -63,18 +93,35 @@ ipcMain.on("appMain/minimize", () => {
 /**
  * Close Add-Task Page
  */
- ipcMain.on("appAdd/close", () => {
+ ipcMain.on("appAdd/closeAdd", () => {
   window2.close()
 });
 
 /**
  * Minimize Add-Task Page
  */
-ipcMain.on("appAdd/minimize", () => {
+ipcMain.on("appAdd/minimizeAdd", () => {
   window2.minimize();
 });
 
+/**
+ * Close LOgin Page
+ */
+ ipcMain.on("appAdd/closeLogin", () => {
+  windowLogin.close()
+});
 
+/**
+ * Minimize Login Page
+ */
+ipcMain.on("appAdd/minimizeLogin", () => {
+  windowLogin.minimize();
+});
+
+
+
+
+// ====== Add Task ======
 /**
  * Add Task when button click
  */

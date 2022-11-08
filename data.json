@@ -1,1 +1,13 @@
-{"task":{"allTask":[],"totalFinishTask":5}}
+{
+    "task":{
+        "allTask":[
+            {"id":0,"taskText":"tt","check":true}
+        ],
+        "totalFinishTask":8
+    },
+    "profile": {
+        "profileDetect": false,
+        "assets": "null",
+        "name": 0
+    }
+}

@@ -21,30 +21,81 @@ body {
 
 /* == Animation CSS == */
 .icon {
+    position: absolute;
     width: 10%;
     height: 15%;
     font-size: 200%;	
     border-radius: 0.5em;
     padding:0.5em;
     margin: 10px;
-    background-color: red;
+}
+
+.imageLogo {
+    width: 100%;
 }
 
 /* == Animation ID == */
-#happy {
+#leftLogo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:darkmagenta;
+    background: darkmagenta;
+    margin-left: 32%;
+    margin-bottom: 5%;
 }
 
-#ok {
+#logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fcf9a1;
+    /* background: #fcf9a1; */
 }
 
-#sad {
-    background: #fca1a1;
+#rightLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:maroon;
+    margin-left: -32%;
+    margin-top: 5%;
+}
+
+#topLogoLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:seagreen;
+    margin-left: -32%;
+    margin-top: -25%;
+    margin-left: -15%;
+}
+
+#topLogoRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:slateblue;
+    margin-left: -32%;
+    margin-top: -28%;
+    margin-left: +19%;
+}
+
+#bottomLogoLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:hotpink;
+    margin-left: -32%;
+    margin-bottom: -28%;
+    margin-left: -15%;
+}
+
+#bottomLogoRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:mediumorchid;
+    margin-left: -32%;
+    margin-bottom: -28%;
+    margin-left: +19%;
 }

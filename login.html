@@ -24,14 +24,14 @@
 
     <!-- Content -->
     <div class="container-task-login">
-      <div class="animation-mouse-area">
-
-          <div id="leftLogo" class="icon">
-            <p>SOON</p>
-          </div>
+      <div class="animation-mouse-area" id="test">
 
           <div id="logo" class="icon">
             <img src="./assets/Sans titre-2.png" alt="" class="imageLogo">
+          </div>
+
+          <div id="leftLogo" class="icon">
+            <p>SOON</p>
           </div>
 
           <div id="rightLogo" class="icon">
@@ -57,6 +57,8 @@
     </div>
 
     <!-- Script Image -->
+    <script src="./src/mouse-effect.js"></script>
+
     <script>
       $(function(){
         boxRollovers();
@@ -75,8 +77,8 @@
           var YRel = e.pageY - $this.offset().top;
           var width = $this.width();
 
-          YAngle = -(0.5 - (XRel / width)) * 38; 
-          XAngle = (0.5 - (YRel / width)) * 38;
+          YAngle = -(0.5 - (XRel / width)) * 30; 
+          XAngle = (0.5 - (YRel / width)) * 30;
           updateView($this.children(".icon"));
         });
         
@@ -92,8 +94,8 @@
         oLayer.css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + XAngle + "deg) rotateY(" + YAngle + "deg)","transition":"none","-webkit-transition":"none"});
         oLayer.find("p").css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + (XAngle / 0.66) + "deg) rotateY(" + (YAngle / 0.66) + "deg)","transition":"none","-webkit-transition":"none"});
       }
-    </script>
 
+    </script>
 
 </body>
 </html>

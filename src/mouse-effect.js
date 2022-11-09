@@ -1,4 +1,4 @@
-const icon = document.getElementById("test")
+const icon = document.getElementById("animationMouse")
 
 // == Test Cursor Effect ==
 document.onmousemove = function() {

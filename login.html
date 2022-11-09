@@ -24,7 +24,7 @@
 
     <!-- Content -->
     <div class="container-task-login">
-      <div class="animation-mouse-area" id="test">
+      <div class="animation-mouse-area" id="animationMouse">
 
           <div id="logo" class="icon">
             <img src="./assets/Sans titre-2.png" alt="" class="imageLogo">
@@ -77,8 +77,8 @@
           var YRel = e.pageY - $this.offset().top;
           var width = $this.width();
 
-          YAngle = -(0.5 - (XRel / width)) * 30; 
-          XAngle = (0.5 - (YRel / width)) * 30;
+          YAngle = -(0.5 - (XRel / width)) * 35; 
+          XAngle = (0.5 - (YRel / width)) * 41;
           updateView($this.children(".icon"));
         });
         

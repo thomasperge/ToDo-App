@@ -26,38 +26,56 @@
     <div class="container-task-login">
       <div class="animation-mouse-area" id="animationMouse">
 
-          <div id="logo" class="icon">
-            <img src="./assets/Sans titre-2.png" alt="" class="imageLogo">
+        <div id="leftLogo" class="icon">
+          <img src="./assets/book.png" alt="" class="imageOutside" id="imageOutside">
+        </div>
+
+        <div id="rightLogo" class="icon">
+          <img src="./assets/car.png" alt="" class="imageOutside">
+        </div>
+
+        <div id="topLogoLeft" class="icon">
+          <img src="./assets/coding.png" alt=""class="imageOutside">
+        </div>
+
+        <div id="topLogoRight" class="icon">
+          <img src="./assets/money.png" alt="" class="imageOutside">
+        </div>
+
+        <div id="bottomLogoLeft" class="icon">
+          <img src="./assets/sport.png" alt="" class="imageOutside">
+        </div>
+
+        <div id="bottomLogoRight" class="icon">
+          <img src="./assets/travel.png" alt="" class="imageOutside">
+        </div>
+
+        <div id="logo" class="main-icon icon">
+          <img src="./assets/Sans titre-2.png" alt="" class="imageLogo">
+        </div>
+      </div>
+
+      <!-- Register Are  -->
+      <div class="register">
+        <div class="register-area">
+
+          <div class="titlePart">Register</div>
+          <input type="text" name="input-username" class="input-username" placeholder="Username">
+
+          <div class="input-file-area">
+            <div class="input-file-background">
+              <img src="./assets/guest.png" alt="Pp" class="profile-picture-img">
+              <label for="file" class="label-file">Choisir une image</label>
+              <input id="file" class="input-file" type="file" accept="image/png, image/jpeg">
+            </div>
           </div>
 
-          <div id="leftLogo" class="icon">
-            <p>SOON</p>
-          </div>
-
-          <div id="rightLogo" class="icon">
-            <p>SOON</p>
-          </div>
-
-          <div id="topLogoLeft" class="icon">
-            <p>SOON</p>
-          </div>
-
-          <div id="topLogoRight" class="icon">
-            <p>SOON</p>
-          </div>
-
-          <div id="bottomLogoLeft" class="icon">
-            <p>SOON</p>
-          </div>
-
-          <div id="bottomLogoRight" class="icon">
-            <p>SOON</p>
-          </div>
+        </div>
       </div>
     </div>
 
     <!-- Script Image -->
-    <script src="./src/mouse-effect.js"></script>
+    <!-- <script src="./src/mouse-effect.js"></script> -->
 
     <script>
       $(function(){
@@ -68,7 +86,7 @@
         $selector = $(".animation-mouse-area");
         XAngle = 0;
         YAngle = 0;
-        // == Width div when mous hover the window ==
+        // == Width div when mouse hover the window ==
         Z = 20;
         
         $selector.on("mousemove",function(e){
@@ -77,8 +95,8 @@
           var YRel = e.pageY - $this.offset().top;
           var width = $this.width();
 
-          YAngle = -(0.5 - (XRel / width)) * 35; 
-          XAngle = (0.5 - (YRel / width)) * 41;
+          YAngle = -(0.5 - (XRel / width)) * 48;
+          XAngle = (0.5 - (YRel / width)) * 48;
           updateView($this.children(".icon"));
         });
         
@@ -92,7 +110,6 @@
       
       function updateView(oLayer) {
         oLayer.css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + XAngle + "deg) rotateY(" + YAngle + "deg)","transition":"none","-webkit-transition":"none"});
-        oLayer.find("p").css({"transform":"perspective(525px) translateZ(" + Z + "px) rotateX(" + (XAngle / 0.66) + "deg) rotateY(" + (YAngle / 0.66) + "deg)","transition":"none","-webkit-transition":"none"});
       }
 
     </script>

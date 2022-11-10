@@ -1,9 +1,11 @@
 const icon = document.getElementById("animationMouse")
 
 // == Test Cursor Effect ==
-document.onmousemove = function() {
+// document.onmousemove = function() {   (all screen cursor animation)
 
-    let x = event.clientX * 5 / window.innerWidth/2 + "%";
+document.getElementById("animationMouse").onmousemove = function() {
+
+    let x = event.clientX * 10 / window.innerWidth/2 + "%";
     let y = event.clientY * 10 / window.innerHeight/2 + "%";
 
     icon.style.left = x;

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "SpotifyMedium";
+    src: url("../../font/GothamMedium.ttf");
+}
+  
 body {
     overflow-y: hidden;
 }
@@ -15,23 +20,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 65%;
     height: 100%;
 }
 
 /* == Animation CSS == */
 .icon {
     position: absolute;
-    width: 7%;
-    height: 11%;
+    width: 10%;
+    height: 16%;
+    font-size: 200%;	
+    border-radius: 0.7em;
+    margin: 10px;
+    /* overflow: hidden; */
+}
+
+.main-icon {
+    position: absolute;
+    width: 8%;
+    height: 8%;
     font-size: 200%;	
     border-radius: 0.5em;
-    padding:0.5em;
     margin: 10px;
 }
 
 .imageLogo {
     width: 110%;
+}
+
+.imageOutside {
+    width: 100%;
 }
 
 /* == Animation ID == */
@@ -45,7 +63,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: darkmagenta;
     margin-left: 30%;
     margin-bottom: 3%;
 }
@@ -54,7 +71,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:maroon;
     margin-left: -30%;
     margin-top: 3%;
 }
@@ -63,17 +79,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:seagreen;
     margin-left: -30%;
-    margin-top: -22%;
-    margin-left: -12%;
+    margin-top: -23%;
+    margin-left: -13%;
 }
 
 #topLogoRight {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:slateblue;
     margin-left: -30%;
     margin-top: -26%;
     margin-left: +17%;
@@ -83,7 +97,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:hotpink;
     margin-left: -30%;
     margin-bottom: -26%;
     margin-left: -13%;
@@ -93,8 +106,85 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:mediumorchid;
-    margin-left: -30%;
-    margin-bottom: -26%;
     margin-left: +17%;
+    margin-bottom: -23%;
+}
+
+/* ====== Register Area ====== */
+/* == Register Area == */
+.register {
+    width: 35%;
+    height: 100%;
+    padding: 0;
+    justify-content: center;
+    background-color: #2c2c2f;
+}
+
+.register-area {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+/* === Input Username / Profile Picture === */
+/* Username */
+.input-username {
+    margin-top: 15px;
+    width: 75%;
+    height: 5%;
+    color: white;
+    background-color: #202022;
+    border-radius: 50px;
+    cursor: text;
+    padding: 0 11px 0 11px;
+    border: #606068;
+    font-family: 'SpotifyMedium';
+    margin-bottom: 4%;
+}
+
+.input-username:focus  {
+    outline: none;
+    caret-color: white;
+}
+
+/* File */
+.input-file-area {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-file-background {
+    display: flex;
+    width: 65%;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    background-color: #202022;
+    border-radius: 25px;
+}
+
+.label-file {
+    cursor: pointer;
+    color: white;
+    font-family: 'SpotifyMedium';
+    font-size: 15px;
+}
+
+.label-file:hover {
+    color:lightgreen;
+}
+
+.input-file {
+    display: none;
+}
+
+.profile-picture-img {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    margin-right: 7px;
 }

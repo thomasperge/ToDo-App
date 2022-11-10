@@ -1,1 +1,1 @@
-{"task":{"allTask":[{"id":0,"taskText":"Test 1","check":true},{"id":1,"taskText":"Test 2","check":true},{"id":2,"taskText":"Test 3","check":false},{"id":3,"taskText":"Test 4","check":false}],"totalFinishTask":8},"profile":{"profileDetect":true,"assets":"null","name":0}}
+{"task":{"allTask":[{"id":0,"taskText":"Test 1","check":true},{"id":1,"taskText":"Test 2","check":true},{"id":2,"taskText":"Test 3","check":false},{"id":3,"taskText":"Test 4","check":false}],"totalFinishTask":8},"profile":{"profileDetect":false,"assets":"null","name":0}}

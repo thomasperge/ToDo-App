@@ -79,3 +79,8 @@ const divCurrent = document.getElementById("currentTaskNumber")
 const divTotal = document.getElementById("finishTaskNumber")
 divCurrent.innerHTML = `Current Task : ${data.task.allTask.length}`
 divTotal.innerHTML = `Finish Task : ${data.task.totalFinishTask}`
+
+const username = document.getElementById('profilename')
+const picture = document.getElementById('profilePicture')
+username.innerHTML = data.profile.name
+picture.setAttribute('src', data.profile.assets)

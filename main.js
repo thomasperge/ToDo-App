@@ -67,7 +67,7 @@ async function login() {
   });
 
   windowLogin.on("ready-to-show", windowLogin.show);
-  windowLogin.loadFile('login.html');
+  windowLogin.loadFile('register.html');
 }
 
 // ====== Close and Minimize App ======
@@ -235,4 +235,22 @@ ipcMain.on("appMain/finishTask", (event, _myreq) => {
 
   // Reload Window :
   window.reload();
+});
+
+
+/**
+ * Register New User
+ */
+ipcMain.on("appMain/registerUser", (event, _myreq) => {
+
+  data.profile.assets = _myreq.image
+  data.profile.name = _myreq.username
+  data.profile.profileDetect = true
+
+  fs.writeFile('data.json', JSON.stringify(data), (err) => {
+    if (err) reject(err)
+  });
+
+  windowLogin.close()
+  main()
 });

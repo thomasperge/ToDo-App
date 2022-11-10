@@ -4,7 +4,6 @@ const path = require('path');
 const fs = require("fs");
 var data = require("./data.json");
 
-
 // == Run the login Page or Main Page ==
 if (data.profile.profileDetect == false) {
   // == No login ==

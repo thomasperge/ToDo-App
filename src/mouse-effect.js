@@ -1,14 +1,10 @@
-const icon = document.getElementById("animationMouse")
+const fileSelector = document.getElementById('file');
+const imageSelected = document.getElementById('display-image')
+const imageArea = document.getElementById("display-image-area")
 
-// == Test Cursor Effect ==
-// document.onmousemove = function() {   (all screen cursor animation)
-
-document.getElementById("animationMouse").onmousemove = function() {
-
-    let x = event.clientX * 10 / window.innerWidth/2 + "%";
-    let y = event.clientY * 10 / window.innerHeight/2 + "%";
-
-    icon.style.left = x;
-    icon.style.right = y;
-    icon.style.transform = "translate(-" + x + ",-" + y + ")";
-}
+fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList[0].path)
+    imageSelected.setAttribute("src", fileList[0].path)
+    imageArea.style = "display: flex;"
+});

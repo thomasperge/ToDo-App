@@ -155,6 +155,7 @@ body {
     height: 35px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .input-file-background {
@@ -187,4 +188,20 @@ body {
     height: 23px;
     border-radius: 100%;
     margin-right: 7px;
+}
+
+/* == Display Image == */
+.display-image-area {
+    display: none;
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 150px;
+    padding: 11px;
+}
+
+.display-image {
+    width: 100%;
+    height: 100%;
 }

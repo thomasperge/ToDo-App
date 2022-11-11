@@ -20,6 +20,7 @@ let windowLogin;
 let window;
 let window2;
 
+
 /**
  * Main Function - Index Page (index.html)
  * @function
@@ -49,7 +50,31 @@ async function main() {
 
 
 /**
- * Login Function - Login Page (login.html)
+ * Add Task Function - Add Task Page (addTask.html)
+ * @function
+ */
+async function addTask() {
+  window2 = new BrowserWindow({
+    frame: false,
+    autoHideMenuBar: true,
+    width: 640,
+    height: 420,
+    resizable: false,
+    webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, "./src/preload.js") // use a preload script
+    }
+  });
+
+  window2.on("ready-to-show", window2.show);
+  window2.loadFile('addTask.html');
+}
+
+
+
+/**
+ * Register Function - Register Page (register.html)
  * @function
  */
 async function login() {
@@ -70,7 +95,10 @@ async function login() {
   windowLogin.loadFile('register.html');
 }
 
+
+
 // ====== Close and Minimize App ======
+// ==== Main Page ====
 /**
  * Close Main App Page
  */
@@ -90,6 +118,7 @@ ipcMain.on("appMain/minimize", () => {
 });
 
 
+// ==== Add Task Page ====
 /**
  * Close Add-Task Page
  */
@@ -104,8 +133,10 @@ ipcMain.on("appAdd/minimizeAdd", () => {
   window2.minimize();
 });
 
+
+// ==== Register Page ====
 /**
- * Close LOgin Page
+ * Close Login Page
  */
  ipcMain.on("appAdd/closeLogin", () => {
   windowLogin.close()
@@ -124,9 +155,9 @@ ipcMain.on("appAdd/minimizeLogin", () => {
 // ====== Add Task ======
 /**
  * Add Task when button click
+ * @method
  */
 ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
-
   var idTask
 
   if(data.task.allTask.length == 0) {
@@ -163,32 +194,22 @@ ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
 });
 
 
+
 /**
  * When button Click, create new windows to add task
+ * @method
  */
 ipcMain.on("appMain/addTaskWindows", () => {
   const isPlayerWindow2Opened = () => !window2?.isDestroyed() && window2?.isFocusable();
   // Check if windows2 is already open
   if (!isPlayerWindow2Opened()) {
-    window2 = new BrowserWindow({
-      frame: false,
-      autoHideMenuBar: true,
-      width: 640,
-      height: 420,
-      resizable: false,
-      webPreferences: {
-        contextIsolation: true,
-        nodeIntegration: true,
-        preload: path.join(__dirname, "./src/preload.js") // use a preload script
-      }
-    });
-
-    window2.on("ready-to-show", window2.show);
-    window2.loadFile('addTask.html');
+    addTask()
   } else {
     console.log("can't open a new windows")
   }
 });
+
+
 
 /**
  * Function delete task from data.json
@@ -209,8 +230,10 @@ function deleteTask(idTask, finishTask) {
 }
 
 
+
 /**
  * Delete Task
+ * @method
  */
 ipcMain.on("appMain/deleteTask", (event, _myreq) => {
   // Log :
@@ -223,8 +246,11 @@ ipcMain.on("appMain/deleteTask", (event, _myreq) => {
   window.reload();
 });
 
+
+
 /**
  * Finish Task
+ * @method
  */
 ipcMain.on("appMain/finishTask", (event, _myreq) => {
   // Log :
@@ -238,8 +264,10 @@ ipcMain.on("appMain/finishTask", (event, _myreq) => {
 });
 
 
+
 /**
  * Register New User
+ * @method
  */
 ipcMain.on("appMain/registerUser", (event, _myreq) => {
 

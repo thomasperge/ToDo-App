@@ -1,7 +1,9 @@
 const { ipcRenderer, contextBridge } = require('electron')
 const data = require('./../data.json')
-// import data from './../data.json' assert { type: 'json' };
 
+/**
+ * Initialize API window
+ */
 const API = {
     window: {
         close: () => ipcRenderer.send("appMain/close"),
@@ -11,7 +13,8 @@ const API = {
 
 
 /**
- * Create New Window to add a Task
+ * Create new window to add a Task
+ * Event : Button "+" click => send path
  */
 document.addEventListener('DOMContentLoaded', function() {
     let addButton = document.getElementById("addTask")
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * Button commit the task (send the input text to ipcMain)
+ * Event : Add Button click => send path
  */
 document.addEventListener('DOMContentLoaded', function() {
     let addButtonSend = document.getElementById("addTaskButtonClick")
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * Button Delete and Finish a Task (main page index.html)
+ * 2 Button : Delete and Finish => Check event => Send path
  */
 document.addEventListener('DOMContentLoaded', function() {
     // == Loop into the DataBase ==
@@ -88,18 +93,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let closeButtonLogin = document.getElementById("close-appLogin")
     let minButtonLogin = document.getElementById("minimizeLogin")
 
+    // Close Button Add => Close window addTask
     closeButtonAdd?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/closeAdd")
     })
 
+    // Min Button Add => Minimize window addTask
     minButtonAdd?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/minimizeAdd")
     })
 
+    // Close Button Register => close window register 
     closeButtonLogin?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/closeLogin")
     })
 
+    // Min Button Register => Minimize window register
     minButtonLogin?.addEventListener("click", () => {
         ipcRenderer.send("appAdd/minimizeLogin")
     })
@@ -108,19 +117,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * Login a User with : Username and Profile Picture
+ * Check the input: Username & Profile Picture
+ * See if the 2 have been filled => return path with 2 parameter: Username & Pp
  */
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the input :
     const fileSelector = document.getElementById('file');
     const usernameSelector = document.getElementById('input-username')
     const namePicture = document.getElementById("namePicture")
 
+    // Initialize the register button:
     const registerButton = document.getElementById("register-button")
+
+    // Initialize the image input bool :
     var imageDone = false
     var pathPicture
 
+    // Check the event if there are any changes in the inputs :
     fileSelector.addEventListener('change', (event) => {
+        // Initilize the file filled :
         const fileList = event.target.files;
 
+        // Check the file size :
         if(fileList[0].size <= 1820000) {
             namePicture.innerHTML = fileList[0].name
             pathPicture = fileList[0].path
@@ -132,7 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Register Button :
     registerButton.addEventListener('click', function() {
+        // Check if the 2 input are filled :
         if(imageDone && usernameSelector.value.length >= 0) {
 
             var _myreq = {
@@ -144,7 +164,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
-
-
 
 contextBridge.exposeInMainWorld("app", API)

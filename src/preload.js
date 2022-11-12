@@ -125,16 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileSelector = document.getElementById('file');
     const usernameSelector = document.getElementById('input-username')
     const namePicture = document.getElementById("namePicture")
+    const nameUsername = document.getElementById("nameUsername")
 
     // Initialize the register button:
     const registerButton = document.getElementById("register-button")
 
     // Initialize the image input bool :
     var imageDone = false
+    var usernameDone = false
     var pathPicture
 
     // Check the event if there are any changes in the inputs :
-    fileSelector.addEventListener('change', (event) => {
+    fileSelector?.addEventListener('change', (event) => {
         // Initilize the file filled :
         const fileList = event.target.files;
 
@@ -146,14 +148,28 @@ document.addEventListener('DOMContentLoaded', function() {
             imageDone = true
         } else {
             namePicture.innerHTML = "File too big, please take a new one..."
-            namePicture.style = "display: flex;"
+            namePicture.style = "display: block;"
         }
     });
 
     // Register Button :
-    registerButton.addEventListener('click', function() {
+    registerButton?.addEventListener('click', function() {
         // Check if the 2 input are filled :
-        if(imageDone && usernameSelector.value.length >= 0) {
+
+        if(usernameSelector.value.length == 0) {
+            nameUsername.innerHTML = "No username has been entered"
+            nameUsername.style = "display: block;"
+        } else if(usernameSelector.value.length <= 3) {
+            nameUsername.innerHTML = "Username too short"
+            nameUsername.style = "display: block;"
+        } else if(usernameSelector.value.length >= 16) {
+            nameUsername.innerHTML = "Username too long"
+            nameUsername.style = "display: block;"
+        } else {
+            usernameDone = true
+        }
+        
+        if(imageDone && usernameDone && usernameSelector.value.length >= 0) {
 
             var _myreq = {
                 image: pathPicture,

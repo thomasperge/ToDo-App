@@ -1,4 +1,4 @@
-import data from '../../data.json' assert { type: 'json' };
+import data from '../../../../data.json' assert { type: 'json' };
 
 const MINUS_ADD = document.getElementById("minimize")
 const CLOSE_APP_ADD = document.getElementById("close-app")
@@ -84,3 +84,5 @@ const username = document.getElementById('profilename')
 const picture = document.getElementById('profilePicture')
 username.innerHTML = data.profile.name
 picture.setAttribute('src', data.profile.assets)
+
+console.log("=> Menu Page => Data : ", data)

@@ -87,7 +87,7 @@ async function login() {
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: true,
-      preload: path.join(__dirname, "./src/preload.js") // use a preload script
+      preload: path.join(__dirname, "./src/preload.js"), // use a preload script
     }
   });
 
@@ -173,14 +173,11 @@ ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
   }
 
   function addTaskData(newTask) {
-      return new Promise((resolve, reject) => {
-        data.task.allTask.push(newTask)
-  
-        fs.writeFile('data.json', JSON.stringify(data), (err) => {
-          if (err) reject(err)
-          resolve("File saved.")
-        })
-      });
+    data.task.allTask.push(newTask)
+
+    fs.writeFile('data.json', JSON.stringify(data), (err) => {
+      if (err) console.log(err)
+    })
   }
 
   // Check length of input value
@@ -225,7 +222,7 @@ function deleteTask(idTask, finishTask) {
   }
 
   fs.writeFile('data.json', JSON.stringify(data), (err) => {
-    if (err) reject(err)
+    if (err) console.log(err)
   });
 }
 
@@ -271,13 +268,19 @@ ipcMain.on("appMain/finishTask", (event, _myreq) => {
  */
 ipcMain.on("appMain/registerUser", (event, _myreq) => {
 
+  console.log("Before Register => Data : ", data)
+
   data.profile.assets = _myreq.image
   data.profile.name = _myreq.username
   data.profile.profileDetect = true
 
   fs.writeFile('data.json', JSON.stringify(data), (err) => {
-    if (err) reject(err)
-  });
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('After Register => Data : ', data)
+    }
+  })
 
   windowLogin.close()
   main()

@@ -26,10 +26,20 @@
 }
 
 /* == Task Input == */
+.input-task-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 11%;
+    margin-top: 11px;
+    /* background-color: red; */
+}
+
 .input-task {
-    margin-top: 15px;
+    margin-right: 5px;
     width: 75%;
-    height: 8%;
+    height: 70%;
     color: white;
     background-color: #202022;
     border-radius: 50px;
@@ -71,26 +81,34 @@
 }
 
 /* == CheckBox to important task == */
-.importantBanner {
+input[type='checkbox']:checked {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 29px;
-    padding-left: 11%;
-    /* background-color: red; */
+    justify-content: center;
+    background-color: red;
 }
 
-.important {
-    font-size: 14px;
-    color: rgb(186, 65, 65);
+input[type='checkbox']:checked:after {
+    /* padding-bottom: 1px; */
+    content: '!';
+    color:white;
     font-family: 'SpotifyMedium';
 }
 
-input[type=checkbox] {
-    width: 14px;
-    height: 14px;
-    accent-color: red;
+input[type='checkbox']{
+    opacity: 85%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 20px !important;
+    height: 20px !important;
+    appearance:none;
+    border-radius:15%;
+    background-color: #202022;
+    box-shadow: none;
+    font-size: 1em;
 }
+
 
 
 @media screen and (min-width: 640px) and (max-width: 640px) {

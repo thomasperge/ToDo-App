@@ -1,4 +1,4 @@
-import data from '../../../../data.json' assert { type: 'json' };
+import data from './../../data.json' assert { type: 'json' };
 
 const MINUS_ADD = document.getElementById("minimize")
 const CLOSE_APP_ADD = document.getElementById("close-app")
@@ -60,9 +60,8 @@ if(data.task.allTask.length == 0) {
         
         // Change this if the task are important (check the data.json)
         if (data.task.allTask[pas].check == true) {
-            div.style.color = 'red'
+            div.style.color = '#ff1212'
             buttonDelete.style.color = 'white'
-            div.insertAdjacentText('afterbegin', '✨ ')
         }
 
         // == Append the div to the main "div" ==

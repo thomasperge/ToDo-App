@@ -261,8 +261,10 @@ body {
   height: 25px;
   align-items: center;
   justify-content: center;
-  padding: 0 0 0 0;
+  padding: 0 7px 0 7px;
   margin: 0px 0px 0px auto;
+  border-radius: 5px;
+  background-color: rgb(23, 23, 23);
 }
 
 .fa-trash-can {

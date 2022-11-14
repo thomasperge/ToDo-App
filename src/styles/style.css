@@ -257,63 +257,45 @@ body {
 /* == Delete Button == */
 .deleteButtonArea {
   display: flex;
-  width: auto;
+  width: 70px;
   height: 25px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px 0 7px;
   margin: 0px 0px 0px auto;
   border-radius: 5px;
   background-color: rgb(23, 23, 23);
 }
 
-.fa-trash-can {
-  display: flex;
-  width: 25px;
-  height: 25px;
-  align-items: center;
-  justify-content: center;
-}
-
-.fa-trash-can:hover {
-  -webkit-transform:scale(0.9);
-  transform:scale(0.9);
-}
-
-.fa-trash-can {
-  width: 23px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.fa-trash-can:hover{
-  width: 25px;
-}
-
-/*  */
+/* Check */
 .fa-check {
   display: flex;
-  width: 25px;
-  height: 25px;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 25px;
+  margin:0;
+  padding:0;
 }
 
 .fa-check:hover {
-  -webkit-transform:scale(0.9);
-  transform:scale(0.9);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: rgb(46, 49, 46);
 }
 
-.fa-check {
-  width: 23px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+/* Trash */
+.fa-trash-can {
+  display: flex;
+  align-items: center;
+  justify-content: center;width: 100%;
+  height: 25px;
+  margin:0;
+  padding:0;
 }
 
-.fa-check:hover{
-  width: 25px;
+.fa-trash-can:hover {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgb(46, 49, 46);
 }
-
 /* =========================== */
 
 

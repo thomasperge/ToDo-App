@@ -35,8 +35,8 @@ if(data.task.allTask.length == 0) {
         // == Initialize Div ==
         const div = document.createElement('div');
         const deleteButtonArea = document.createElement('div')
-        const buttonDelete = document.createElement('i')
-        const finishButton = document.createElement('i')
+        const buttonDelete = document.createElement('div')
+        const finishButton = document.createElement('div')
 
         // == Initialize class for each div ==
         div.className = 'taskSection';
@@ -56,7 +56,7 @@ if(data.task.allTask.length == 0) {
 
         // == Build the style div ==
         finishButton.style.color = '#12ff00'
-        finishButton.style.marginRight = '15px'
+        // finishButton.style.marginRight = '15px'
         
         // Change this if the task are important (check the data.json)
         if (data.task.allTask[pas].check == true) {
@@ -70,6 +70,8 @@ if(data.task.allTask.length == 0) {
         deleteButtonArea.appendChild(buttonDelete)
 
         document.getElementById("taskId").append(div);
+
+        console.log(div)
     }
 }
 

@@ -14,10 +14,9 @@
 
 <!-- ![screenshot](./assets/readmeAssets/1114.gif) -->
 
-<video align="center">
-  ${![screenshot](./assets/readmeAssets/1114.gif)}
-
-</video>
+<p align="center">
+  <img src="./assets/readmeAssets/1114.gif" alt="animated" />
+</p>
 
 ## Key Features
 

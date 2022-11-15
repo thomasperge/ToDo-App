@@ -12,8 +12,11 @@
   <a href="#assets">Assets</a>
 </p>
 
+<!-- ![screenshot](./assets/readmeAssets/1114.gif) -->
+
 <video align="center">
-  <img src="./assets/readmeAssets/1114.gif" alt="funny animation GIF"> 
+  ${![screenshot](./assets/readmeAssets/1114.gif)}
+
 </video>
 
 ## Key Features

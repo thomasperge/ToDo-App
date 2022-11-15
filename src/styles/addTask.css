@@ -33,7 +33,6 @@
     width: 100%;
     height: 11%;
     margin-top: 11px;
-    /* background-color: red; */
 }
 
 .input-task {
@@ -61,8 +60,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 25px;
-    background-color: red;
+    height: 20%;
 }
 
 .buttonArea {
@@ -126,12 +124,14 @@ input[type='checkbox']{
     margin-top: 11px;
     color: white;
     font-family: 'SpotifyMedium';
+    font-size: 14px;
 }
 
 .categorieArea {
     display: flex;
+    flex-wrap: wrap;
     width: 89%;
-    height: 79%;
+    height: auto;
     background-color: #202022;
     border-radius: 5px;
     padding: 8px;
@@ -139,14 +139,17 @@ input[type='checkbox']{
 
 .categorieButton {
     display: flex;
+    margin: 0;
+    padding: 0;
     justify-content: center;
     align-items: center;
     width: auto;
     height: 25px;
     padding-right: 5px;
-    background-color: #606068;
+    background-color: #48484d;
     border-radius: 5px;
     margin-right: 9px;
+    margin-bottom: 9px;
 }
 
 @media screen and (min-width: 640px) and (max-width: 640px) {

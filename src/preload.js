@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
- * Function that manages the category buttons, if it has been clicked several times
+ * Function check if categorie
  * @param {bool} categorie 
  * @returns bool
  */

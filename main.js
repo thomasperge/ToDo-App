@@ -158,12 +158,8 @@ ipcMain.on("appAdd/minimizeLogin", () => {
  * @method
  */
 ipcMain.on("appAdd/addTaskSend", (event, _myreq) => {
-  // Log :
-  console.log("Req : ", _myreq);
-
-  for(let i = 0; i < _myreq.length; i++){
-    console.log(_myreq[i]);
-  }
+  // Log (return array) :
+  var allCategories = Object.entries(_myreq);
 
   // Initializ Task Id :
   var idTask
@@ -179,9 +175,21 @@ ipcMain.on("appAdd/addTaskSend", (event, _myreq) => {
   var newTask = {
     id: idTask,
     taskText: _myreq.task,
-    check: _myreq.checked
+    check: _myreq.checked,
+    categorie : []
   }
 
+  // Push the category equal to true in the newTask variable :
+  for(let i = 2; i < allCategories.length; i++){
+    if(allCategories[i][1]){
+      newTask.categorie.push(allCategories[i][0])
+    };
+  }
+
+  /**
+   * Add Task to newTask Object
+   * @param {object} newTask 
+   */
   function addTaskData(newTask) {
     data.task.allTask.push(newTask)
 
@@ -194,6 +202,8 @@ ipcMain.on("appAdd/addTaskSend", (event, _myreq) => {
   if (_myreq.task.length > 0) {
     addTaskData(newTask)
   };
+
+  console.log("Task Add : ", newTask);
   
   // Reload Window & Close window2:
   window.reload();

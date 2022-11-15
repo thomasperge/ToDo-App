@@ -25,24 +25,131 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
+ * Function that manages the category buttons, if it has been clicked several times
+ * @param {bool} categorie 
+ * @returns bool
+ */
+function categorieButton(categorie){
+    if(categorie) {
+        return false
+    } else {
+        return true
+    }
+}
+
+
+/**
  * Button commit the task (send the input text to ipcMain)
  * Event : Add Button click => send path
+ * And Add categorie
  */
 document.addEventListener('DOMContentLoaded', function() {
-    let addButtonSend = document.getElementById("addTaskButtonClick")
+    // initialize send button :
+    var addButtonSend = document.getElementById("addTaskButtonClick");
 
+    // Initialize all button categorie :
+    var personnalButton = document.getElementById("personal");
+    var workButton = document.getElementById("work");
+    var famillyButton = document.getElementById("family");
+    var goalButton = document.getElementById("goal");
+    var creationButton = document.getElementById("creation");
+    var projectButton = document.getElementById("project");
+    var entertainmentButton = document.getElementById("entertainment");
+    var educationButton = document.getElementById("education");
+    var travelButton = document.getElementById("travel");
+    var eventButton = document.getElementById("event");
+    var businessButton = document.getElementById("business");
+    var hobbiesButton = document.getElementById("hobbies");
+    var healthButton = document.getElementById("health");
+
+    // Data request :
+    var _myreq = {
+        task: "",
+        checked: false,
+        personal: false,
+        work: false,
+        family: false,
+        goal: false,
+        creation: false,
+        project: false,
+        entertainment: false,
+        education: false,
+        travel: false,
+        event: false,
+        business: false,
+        hobbies: false,
+        health: false
+    };
+
+    personnalButton?.addEventListener("click", () => {
+        _myreq.personal = categorieButton(_myreq.personal)
+    });
+
+    workButton?.addEventListener("click", () => {
+        _myreq.work = categorieButton(_myreq.work)
+    });
+
+    famillyButton?.addEventListener("click", () => {
+        _myreq.family = categorieButton(_myreq.family)
+    });
+
+    goalButton?.addEventListener("click", () => {
+        _myreq.goal = categorieButton(_myreq.goal)
+    });
+
+    creationButton?.addEventListener("click", () => {
+        _myreq.creation = categorieButton(_myreq.creation)
+    });
+
+    projectButton?.addEventListener("click", () => {
+        _myreq.project = categorieButton(_myreq.project)
+    });
+
+    entertainmentButton?.addEventListener("click", () => {
+        _myreq.entertainment = categorieButton(_myreq.entertainment)
+    });
+
+    educationButton?.addEventListener("click", () => {
+        _myreq.education = categorieButton(_myreq.education)
+    });
+
+    travelButton?.addEventListener("click", () => {
+        _myreq.travel = categorieButton(_myreq.travel)
+    });
+
+    eventButton?.addEventListener("click", () => {
+        _myreq.event = categorieButton(_myreq.event)
+    });
+
+    businessButton?.addEventListener("click", () => {
+        _myreq.business = categorieButton(_myreq.business)
+    });
+
+    hobbiesButton?.addEventListener("click", () => {
+        _myreq.hobbies = categorieButton(_myreq.hobbies)
+    });
+
+    healthButton?.addEventListener("click", () => {
+        _myreq.health = categorieButton(_myreq.health)
+    });
+
+
+    // Add Task click event :
     addButtonSend?.addEventListener("click", () => {
-        let input = document.getElementById("taskInputText").value
-        const cb = document.getElementById('important');
+        // Initialize input + important checked :
+        var input = document.getElementById("taskInputText").value;
+        var cb = document.getElementById('important');
 
-        var _myreq = {
-            task: input,
-            checked: cb.checked
-        };
+        // Add Input + checked important to our request :
+        _myreq.task = input
+        _myreq.checked = cb.checked
 
-        ipcRenderer.send("appMain/addTaskSend", (event, _myreq))
-    })
+        // Send the request :
+        ipcRenderer.send("appAdd/addTaskSend", (event, _myreq))
+    });
+
 })
+
 
 
 /**

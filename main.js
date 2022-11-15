@@ -157,15 +157,25 @@ ipcMain.on("appAdd/minimizeLogin", () => {
  * Add Task when button click
  * @method
  */
-ipcMain.on("appMain/addTaskSend", (event, _myreq) => {
+ipcMain.on("appAdd/addTaskSend", (event, _myreq) => {
+  // Log :
+  console.log("Req : ", _myreq);
+
+  for(let i = 0; i < _myreq.length; i++){
+    console.log(_myreq[i]);
+  }
+
+  // Initializ Task Id :
   var idTask
 
+  // Check the all task length :
   if(data.task.allTask.length == 0) {
     idTask = 0
   } else {
     idTask = data.task.allTask[data.task.allTask.length-1].id + 1
   }
 
+  // Create the new task :
   var newTask = {
     id: idTask,
     taskText: _myreq.task,
@@ -251,7 +261,7 @@ ipcMain.on("appMain/deleteTask", (event, _myreq) => {
  */
 ipcMain.on("appMain/finishTask", (event, _myreq) => {
   // Log :
-  console.log("Finish Task => ", _myreq.id)
+  console.log("Finish Task => id:", _myreq.id)
 
   // Delete Task :
   deleteTask(_myreq.id, true)

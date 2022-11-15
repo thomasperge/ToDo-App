@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if(usernameSelector.value.length <= 3) {
             nameUsername.innerHTML = "Username too short"
             nameUsername.style = "display: block;"
-        } else if(usernameSelector.value.length >= 16) {
+        } else if(usernameSelector.value.length >= 18) {
             nameUsername.innerHTML = "Username too long"
             nameUsername.style = "display: block;"
         } else {

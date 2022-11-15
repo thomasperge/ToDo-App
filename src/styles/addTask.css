@@ -61,11 +61,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 25px;
+    background-color: red;
 }
 
 .buttonArea {
-    margin-top: 14%;
+    position: absolute;
+    /* margin-top: 7%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,8 +78,7 @@
 }
 
 .buttonArea:hover {
-    width: 51px;
-    height: 26px;
+    opacity: 65%;
 }
 
 /* == CheckBox to important task == */
@@ -113,6 +114,39 @@ input[type='checkbox']{
     background-color: #202022;
     box-shadow: none;
     font-size: 1em;
+}
+
+/* == Categorie Button == */
+.categorie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    margin-top: 11px;
+    color: white;
+    font-family: 'SpotifyMedium';
+}
+
+.categorieArea {
+    display: flex;
+    width: 89%;
+    height: 79%;
+    background-color: #202022;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.categorieButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 25px;
+    padding-right: 5px;
+    background-color: #606068;
+    border-radius: 5px;
+    margin-right: 9px;
 }
 
 @media screen and (min-width: 640px) and (max-width: 640px) {

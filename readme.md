@@ -2,19 +2,19 @@
   <br>
   <img src="./assets/logo.png" alt="Markdownify" width="200">
   <br>
-  ToDo
-  <br>
 </h1>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="#license">License</a> •
   <a href="#assets">Assets</a>
 </p>
 
-![screenshot](./assets/readmeAssets/1114.gif)
+<video align="center">
+  <source src="./assets/readmeAssets/1114.gif" type="video/mp4">
+</video>
 
 ## Key Features
 
@@ -60,10 +60,10 @@ This software uses the following open source packages:
 MIT
 
 ## Assets : 
+![Alt text](./assets/readmeAssets/4.png)
 ![Alt text](./assets/readmeAssets/3.png)
 ![Alt text](./assets/readmeAssets/1.png)
 ![Alt text](./assets/readmeAssets/2.png)
-![Alt text](./assets/readmeAssets/4.png)
 
 > GitHub [@thomasperge](https://github.com/thomasperge) &nbsp;&middot;&nbsp;
 

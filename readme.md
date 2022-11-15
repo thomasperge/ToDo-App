@@ -13,7 +13,7 @@
 </p>
 
 <video align="center">
-  <source src="./assets/readmeAssets/1114.gif" type="video/mp4">
+  <source src="https://www.veed.io/view/43ab658b-874e-4706-9d72-e63318e82e6b?panel=share" type="video/mp4">
 </video>
 
 ## Key Features

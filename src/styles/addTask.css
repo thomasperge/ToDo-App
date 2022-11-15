@@ -146,7 +146,8 @@ input[type='checkbox']{
     width: auto;
     height: 25px;
     padding-right: 5px;
-    background-color: #48484d;
+    /* background-color: #00d46048; maybe this color idk*/
+    background-color:#323234;
     border-radius: 5px;
     margin-right: 9px;
     margin-bottom: 9px;

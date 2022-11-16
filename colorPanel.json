@@ -1,3 +1,9 @@
 {
-    "black": "#202022"
+    "area": "#111112",
+    "secondArea": "#18181c",
+    "thirdArea": "#1a1a1d",
+    "body": "#202022",
+    "titlebar": "#29292d",
+    "task": "#2c2c2f",
+    "titlebarButton": "#323238"
 }

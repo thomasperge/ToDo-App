@@ -243,11 +243,12 @@ body {
 
 .taskSection {
   display: flex;
+  align-items: center;
   overflow: hidden;
   width: auto;
   height: auto;
   border-radius: 9px;
-  padding: 4%;
+  padding: 3%;
   margin-bottom: 11px;
   text-align: left;
   background-color: #202022;
@@ -262,7 +263,10 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  /* background-color:lime; */
+  padding: .7%;
+  padding-left: 1%;
+  border-radius: 4px;
+  background-color:#1a1a1d;
 }
 
 .noTaskText {
@@ -301,7 +305,9 @@ body {
   border-radius: 5px;
   margin-bottom: 11px;
   background-color: #202022;
-  padding: 2%;
+  padding: 1%;
+  padding-left: 1.5%;
+  font-size: auto;
 }
 
 /* ==== Delete and Finish Task Button (on the right on the task text) ==== */
@@ -369,6 +375,10 @@ body {
     font-family: 'SpotifyMedium';
     align-items: center;
     height: 3%;
+  }
+
+  .taskSection {
+    padding: 2%
   }
 }
 

@@ -62,6 +62,7 @@ if(data.task.allTask.length == 0) {
 
         // == Put the task text / Categorie Text ==
         displayTaskText.innerHTML = data.task.allTask[pas].taskText;
+        displayTaskText.insertAdjacentText('afterbegin', '> ')
         displayCategorie.innerHTML = data.task.allTask[pas].categorie.toString()
 
         // == Build the style div ==
@@ -72,7 +73,7 @@ if(data.task.allTask.length == 0) {
 
         // == Change taskSection style if the task are important ("check" the data.json) ==
         if (data.task.allTask[pas].check == true) {
-            div.style.color = '#ff1212'
+            div.style.color = 'rgba(255,0,0,1)'
             buttonDelete.style.color = 'white'
             categorieButton.style.color = "lightcoral"
         }

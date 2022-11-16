@@ -4,21 +4,56 @@ const path = require('path');
 const fs = require("fs");
 var data = require("./data.json");
 
-// == Run the login Page or Main Page ==
-if (data.profile.profileDetect == false) {
-  // == No login ==
-  app.whenReady().then(login);
-} else {
-  // == Login ==
-  app.whenReady().then(main);
-}
+
+const createLoadingWindow = () => loading()
+
+app.on('ready', () => {
+    const windowLoading = createLoadingWindow()
+    windowLoading.loadFile('loading.html')
+
+    setTimeout(() => {
+      windowLoading.close()
+      // == Run the login Page or Main Page ==
+      if (data.profile.profileDetect == false) {
+        // == No login ==
+        app.whenReady().then(login);
+      } else {
+        // == Login ==
+        app.whenReady().then(main);
+      }
+    }, 3500)
+})
 
 app.disableHardwareAcceleration();
+
 
 // Create the main windows
 let windowLogin;
 let window;
 let window2;
+
+
+/**
+ * Loading Function - Loading Page (loading.html)
+ * @function
+ */
+function loading() {
+  // Create the browser window.
+  windowLoad = new BrowserWindow({
+    frame: false,
+    autoHideMenuBar: true,
+    width: 500,
+    height: 345,
+    resizable: false,
+    webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, "./src/preload.js") // use a preload script
+    }
+  })
+  return windowLoad
+};
+
 
 
 /**

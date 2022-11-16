@@ -12,8 +12,6 @@
   <a href="#assets">Assets</a>
 </p>
 
-<!-- ![screenshot](./assets/readmeAssets/1114.gif) -->
-
 <p align="center">
   <img src="./assets/readmeAssets/1114.gif" alt="animated" />
 </p>

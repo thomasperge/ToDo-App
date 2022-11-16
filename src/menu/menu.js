@@ -24,53 +24,91 @@ function minimize(){
 }
 
 // === List all Task to do ===
-// check if there are no task save
+// Check if there are no task save :
 if(data.task.allTask.length == 0) {
+    // Task Number = 0
     const div = document.createElement('div');
     div.className = 'noTaskText';
     div.innerHTML = 'No task recorded'
     document.getElementById("taskId").append(div);
 } else {
+    // == Loop into all task ==
     for(let pas = 0; pas <= data.task.allTask.length-1; pas++) {
         // == Initialize Div ==
         const div = document.createElement('div');
-        const deleteButtonArea = document.createElement('div')
-        const buttonDelete = document.createElement('div')
-        const finishButton = document.createElement('div')
+        const displayTaskText = document.createElement('div');
+        const categorieButton = document.createElement('div');
+        const displayCategorie = document.createElement('div');
+
+        const deleteButtonArea = document.createElement('div');
+        const buttonDelete = document.createElement('div');
+        const finishButton = document.createElement('div');
+
+        // == Initialize Bool for Categorie Boutton Emoji ==
+        var categorieButtonBool = false
 
         // == Initialize class for each div ==
         div.className = 'taskSection';
         deleteButtonArea.className = "deleteButtonArea"
         buttonDelete.className = "fa-regular fa-trash-can"
         finishButton.className = "fa-solid fa-check"
+        categorieButton.className = "categorieAreaButton fa-solid fa-angle-down"
+        displayTaskText.className = "taskTextArea"
+        displayCategorie.className = "displayCategorie"
 
-        // == Initialize id for each div => According to the id ==
+        // == Initialize id for each div tasksection ==
         buttonDelete.id = "deleteButton" + data.task.allTask[pas].id.toString()
         finishButton.id = "finishButton" + data.task.allTask[pas].id.toString()
 
-        // == Log the main div (know the class and id for button) ==
-        console.log(div)
-
-        // == Put the task text ==
-        div.innerHTML = data.task.allTask[pas].taskText;
+        // == Put the task text / Categorie Text ==
+        displayTaskText.innerHTML = data.task.allTask[pas].taskText;
+        displayCategorie.innerHTML = data.task.allTask[pas].categorie.toString()
 
         // == Build the style div ==
         finishButton.style.color = '#12ff00'
-        // finishButton.style.marginRight = '15px'
-        
-        // Change this if the task are important (check the data.json)
+
+        // == Hidden the categorie display ==
+        displayCategorie.style.display = "none"
+
+        // == Change taskSection style if the task are important ("check" the data.json) ==
         if (data.task.allTask[pas].check == true) {
             div.style.color = '#ff1212'
             buttonDelete.style.color = 'white'
+            categorieButton.style.color = "lightcoral"
         }
 
-        // == Append the div to the main "div" ==
+        // == Append all the div to the main "div" ==
+        div.appendChild(categorieButton)
+        div.appendChild(displayTaskText)
         div.appendChild(deleteButtonArea)
+        // Put "categorieButton" first div to display before other
+        div.prepend(categorieButton)
+        
         deleteButtonArea.appendChild(finishButton)
         deleteButtonArea.appendChild(buttonDelete)
 
+        // == Append all to front-end ==
         document.getElementById("taskId").append(div);
 
+        // == Check data length ==
+        if(data.task.allTask[pas].categorie.length >= 1) {
+            document.getElementById("taskId").append(displayCategorie);
+        }
+
+        // === Categorie change icon Up and Down, When click event === 
+        categorieButton?.addEventListener("click", () => {
+            if(categorieButtonBool) {
+                categorieButton.className = "categorieAreaButton fa-solid fa-angle-down"
+                displayCategorie.style.display = "none"
+                categorieButtonBool = false
+            } else {
+                categorieButton.className = "categorieAreaButton fa-solid fa-angle-up"
+                categorieButtonBool = true
+                displayCategorie.style.display = "flex"
+            }
+        })
+
+        // == Log the main div (know the class and id for button) ==
         console.log(div)
     }
 }

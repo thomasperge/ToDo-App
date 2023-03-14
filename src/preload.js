@@ -11,7 +11,6 @@ const API = {
     },
 }
 
-
 /**
  * Create new window to add a Task
  * Event : Button "+" click => send path
@@ -287,5 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
+
 
 contextBridge.exposeInMainWorld("app", API)

@@ -2,7 +2,7 @@
 - ✅ Finir le input text pour ajouter une tache
 - ✅ Permettre la suppression de tache et la finalisation d'une tache
 - ✅ Permettre de mettre une tache comme importante (l'afficher en rouge dans task)
-- Ajouter une page de loading au lancement de l'app
+- ✅ Ajouter une page de loading au lancement de l'app
 - ✅ Ajouter aux debut fenêtre de login pour l'utilisateur (avec pseudo et image) (si il n'a pas de compte)
     => Afficher l'image et le pseudo
 - ✅ Ajout des categories aux tâches

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/thomasperge/ToDoListApp#readme",
   "devDependencies": {
+    "chart.js": "^4.0.1",
     "electron": "^21.2.3"
   },
   "dependencies": {
